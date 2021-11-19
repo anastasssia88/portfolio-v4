@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from 'react'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import { ThemeProvider } from "styled-components";
+import { lightTheme, darkTheme } from "./theme/theme";
+
+import Navbar from "./layouts/Navbar";
+import Hero from "./layouts/Hero";
+import Core from "./layouts/Core";
+import Form from "./layouts/Form";
+import Footer from "./layouts/Footer";
+
+
+const App = () => {
+    const [ theme, setTheme ] = useState(lightTheme);
+    return (
+        <ThemeProvider theme={theme}>
+            <header>
+                <Navbar theme={theme} setTheme={setTheme}/>
+            </header>
+            <main>
+                <Hero />
+                <Core />
+                <Form />
+            </main>
+            <footer>
+                <Footer />
+            </footer>
+        </ThemeProvider>
+    )
 }
 
-export default App;
+export default App
