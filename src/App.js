@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import styled from "styled-components";
 
 import { ThemeProvider } from "styled-components";
 import { lightTheme, darkTheme } from "./theme/theme";
@@ -8,6 +9,9 @@ import Hero from "./layouts/Hero";
 import Core from "./layouts/Core";
 import Form from "./layouts/Form";
 import Footer from "./layouts/Footer";
+import {Section} from "./layouts/Wrappers"
+
+import bgImage from "./images/bg-light.png"
 
 
 const App = () => {
@@ -18,9 +22,11 @@ const App = () => {
                 <Navbar theme={theme} setTheme={setTheme}/>
             </header>
             <main>
-                <Hero />
-                <Core />
-                <Form />
+                <MainSection>
+                    <Hero />
+                    <Core />
+                    <Form />
+                </MainSection>
             </main>
             <footer>
                 <Footer />
@@ -30,3 +36,9 @@ const App = () => {
 }
 
 export default App
+
+const MainSection = styled(Section)`
+    background-image: url(${bgImage});
+    background-repeat: no-repeat;
+    background-size: contain;
+`

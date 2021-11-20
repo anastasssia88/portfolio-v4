@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from "styled-components";
 
-import {Section, Div} from "./Wrappers"
+import {Div} from "./Wrappers"
 
 const Navbar = () => {
     return (
