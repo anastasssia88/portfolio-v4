@@ -21,11 +21,10 @@ const Navbar = () => {
 export default Navbar
 
 const StyledNav = styled.nav`
-    min-height: 30rem;
+    min-height: 3rem;
 `
 
 const ListWtapper = styled(Div)`
-
     ul {
         display: flex;
         flex-direction: row;

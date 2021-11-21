@@ -152,21 +152,19 @@ h1{font-size: 3rem}
 h2{font-size: 1.8rem}
 h3{font-size: 1.2rem; font-weight: 600;}
 
+
 div, p, span, header, main, footer {font-family: 'Poppins', sans-serif;}
 
 header {
-    position: fixed;
     width: 100%;
 }
 
 main {
-    padding-top: 4rem;
     width: 100%;
 }
 
 a {
     cursor: pointer;
-    z-index: 10;
 }
 
 `;

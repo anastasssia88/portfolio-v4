@@ -9,14 +9,18 @@ export const Section = styled.section`
     background: ${ props => props.theme.bgMain};
 `
 
-
 export const Div = styled.div`
     width: 100%;
     padding: 1.5rem 17%;
+    
     background: ${ props => props.theme.bgMain };
 `
 
 export const Container = styled.div`
     width: 100%;
-    padding: 1rem 0 4rem 0;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
 `
+

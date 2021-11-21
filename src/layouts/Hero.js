@@ -31,6 +31,7 @@ export default Hero
 
 
 const HeroSection = styled(Container)`
+    padding: 1rem 0 4rem 0;
     display: flex;
     flex-direction: row;
 
@@ -39,7 +40,6 @@ const HeroSection = styled(Container)`
     }
 
     div:first-child{
-        z-index: 222;
         padding-right: 5rem;
         display: flex;
         flex-direction: column;
@@ -73,7 +73,6 @@ const HeroSection = styled(Container)`
 
     div:nth-child(2){
         /* width: 30%; */
-        z-index: 222;
         img {
             width: 25rem;
         }

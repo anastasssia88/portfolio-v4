@@ -6,7 +6,7 @@ import { lightTheme, darkTheme } from "./theme/theme";
 
 import Navbar from "./layouts/Navbar";
 import Hero from "./layouts/Hero";
-import Core from "./layouts/Core";
+import About from "./layouts/About";
 import Form from "./layouts/Form";
 import Footer from "./layouts/Footer";
 import {Section} from "./layouts/Wrappers"
@@ -24,7 +24,7 @@ const App = () => {
             <main>
                 <MainSection>
                     <Hero />
-                    <Core />
+                    <About />
                     <Form />
                 </MainSection>
             </main>
@@ -41,4 +41,9 @@ const MainSection = styled(Section)`
     background-image: url(${bgImage});
     background-repeat: no-repeat;
     background-size: contain;
+
+    h2 {
+        color: ${ props => props.theme.accentMain};
+        text-align: center;
+    }
 `
