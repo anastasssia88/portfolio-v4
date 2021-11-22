@@ -5,6 +5,7 @@ import styled from "styled-components";
 import {Container} from "./Wrappers"
 import Card from "../components/Card"
 import WorkCard from "../components/WorkCard"
+import Project from "../components/Project"
 
 const About = () => {
     const [experience, setExperience] = useState(
@@ -26,8 +27,28 @@ const About = () => {
         description: "Developed performant and accessible user interfaces with Reactjs and Nextjs. Reduced by 20% cost-per-lead by investigating and improving the performance of a website by eliminating render-blocking CSS and JavaScript. Increased  development productivity by 2 hours/day by refactoring & buidling reusable components.",
         tags: ["JavaScript", "HTML/CSS", "React.js", "Next.js", "TailwindCSS", "Bootstrap", "Styled Components", "Git"]
     },
-
     ]);
+
+    const [projects, setProjects] = useState(
+        [{
+            id: 111,
+            name: "petspaw",
+            title: "PetsPaw",
+            type: "Web app",
+            description: "Individual project. Built a React web application based on The Dogs API.",
+            tags: ["React.js", "Styled Components", "API"],
+            demoLink: "https://petspaw-by-anastasia-titova.netlify.app/",
+        },
+        {
+            id: 122,
+            name: "oxana",
+            title: "Oxana's Cakes",
+            type: "Website",
+            description: "Website for a local small business - bakery in Los Angeles.",
+            tags: ["JavaScript", "HTML/CSS"],
+            demoLink: "https://oxanascakes.netlify.app/",
+        },
+        ]);
     return (
         <>
             <Skills>
@@ -51,7 +72,10 @@ const About = () => {
             <Projects>
                 <h2>Coding Projects</h2>  
                 <div>
-                    Projects
+                    {
+                        projects.map( i => <Project key={i.id} name={i.name} title={i.title} type={i.type} description={i.description} tags={i.tags} demoLink={i.demoLink}
+                        />)
+                    }
                 </div>     
             </Projects>  
         </>
@@ -84,6 +108,7 @@ const Experience = styled(Container)`
 
 const Projects = styled(Container)`
     > div {
+        width: 100%;
         padding: 3rem 0;
         display: flex;
         justify-content: space-between;

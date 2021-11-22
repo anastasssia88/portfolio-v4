@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from "styled-components";
 
+import {TagContainer} from "../layouts/Wrappers"
+
 const WorkCard = ({state, title, dates, company, description, tags}) => {
     description = description.split(". ");
     console.log(description)
@@ -28,7 +30,7 @@ const StyledDiv = styled.div`
 
     h3 {
         color: ${ props => props.theme.accentMain };
-        font-size: 16px;
+        font-size: 18px;
         font-weight: bold;
         padding-bottom: 1rem;
     }
@@ -46,7 +48,6 @@ const StyledDiv = styled.div`
         background: ${ props => props.theme.accentMain };
         border-color: ${ props => props.theme.accentMain };
         background: ${ props => props.state === "current" && props.theme.bgMain};
-        /* right: 5rem; */
     }
 
     /* p:first-child {
@@ -61,9 +62,4 @@ const StyledDiv = styled.div`
         padding-top: 1rem;
     }
 `
-const TagContainer = styled.ol`
-    li {
-        background: lavender;
-    }
 
-`
