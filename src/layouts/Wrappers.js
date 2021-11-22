@@ -29,5 +29,5 @@ export const TagContainer = styled.ul`
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-
+    justify-content: ${ props => props.center && 'center'};
 `

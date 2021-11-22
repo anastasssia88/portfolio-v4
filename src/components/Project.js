@@ -1,6 +1,10 @@
 import React from 'react'
 import styled from "styled-components";
 
+// components
+import {TagContainer} from "../layouts/Wrappers";
+import Tag from "../components/Tag";
+
 // images
 import Oxana from "../images/oxana.png"
 import Petspaw from "../images/petspaw.png"
@@ -25,6 +29,12 @@ const Project = ({name, title, type, description, tags, demoLink}) => {
                 <h3>{title}</h3>
                 
                 <p>{description}</p> 
+            
+                <TagContainer center>
+                    {
+                        tags.map( i => <Tag key={i} content={i} color="#f7e1e6" />)
+                    }
+                </TagContainer>
             </div>
         </a>
         </StyledDiv>

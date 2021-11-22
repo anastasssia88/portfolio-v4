@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from "styled-components";
 
-const Tag = ({ content }) => {
+const Tag = ({ content, color }) => {
     return (
-        <TagBox>
+        <TagBox color={color}>
             { content }
         </TagBox>
     )
@@ -21,4 +21,6 @@ const TagBox = styled.li`
     background: lavender;
     color: ${ props => props.theme.mainSec};
     text-align: center;
+
+    background: ${ props => props.color }
 `
