@@ -24,9 +24,10 @@ export const Container = styled.div`
     padding-bottom: 4rem;
 `
 
-export const TagContainer = styled.ol`
-    li {
-        background: lavender;
-    }
+export const TagContainer = styled.ul`
+    margin-top: 0.6rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 
 `

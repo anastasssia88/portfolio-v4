@@ -1,7 +1,9 @@
 import React from 'react'
 import styled from "styled-components";
 
+// components
 import {TagContainer} from "../layouts/Wrappers"
+import Tag from "../components/Tag"
 
 const WorkCard = ({state, title, dates, company, description, tags}) => {
     description = description.split(". ");
@@ -15,7 +17,11 @@ const WorkCard = ({state, title, dates, company, description, tags}) => {
             {
                 description.map( sentence => <p key={sentence}>- {sentence}</p>)
             }
-            <TagContainer></TagContainer>
+            <TagContainer>
+                {
+                    tags.map( i => <Tag key={i} content={i}/>)
+                }
+            </TagContainer>
             
         </StyledDiv>
     )
