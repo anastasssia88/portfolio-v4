@@ -2,17 +2,18 @@ import React from 'react'
 import styled from "styled-components";
 
 import {Div} from "./Wrappers"
+import Button from "../components/Button"
 
 const Navbar = () => {
     return (
         <StyledNav>
             <ListWtapper>
                 <ul>
-                    <li>Skills</li>  
-                    <li>Work Experience</li>  
-                    <li>Projects</li>  
-                    <li>Contact</li>
+                    <li><a href="#skills">Skills</a></li>  
+                    <li><a href="#work-experience">Work Experience</a></li>  
+                    <li><a href="#projects">Projects</a></li>  
                 </ul>
+                <Button content="Contact"/>
             </ListWtapper>
         </StyledNav>
     )
@@ -25,11 +26,30 @@ const StyledNav = styled.nav`
 `
 
 const ListWtapper = styled(Div)`
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    
     ul {
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: flex-end;
         align-items: center;
+    }
+
+    ul > li {
+        margin-right: 4rem;
+        cursor: pointer;       
+    }
+
+    ul > li > a {
+        color: ${ props => props.theme.textMain };
+        transition: all 0.3s ease;
+
+        &:hover {
+            color: ${ props => props.theme.accentSec };
+        }
     }
 
 `

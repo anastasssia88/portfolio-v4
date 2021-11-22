@@ -31,7 +31,7 @@ export default WorkCard
 
 
 const StyledDiv = styled.div`
-    padding: 2rem 0;
+    padding: 3rem 0;
     padding-left: 4rem;
 
     h3 {

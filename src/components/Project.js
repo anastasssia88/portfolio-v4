@@ -91,6 +91,7 @@ const StyledDiv = styled.div`
             font-size: 12px;
             letter-spacing: 4px;
             padding-top: 1rem;
+            padding-bottom: 0.4rem;
             color: ${ props => props.theme.textSec};
         }
         h3 {

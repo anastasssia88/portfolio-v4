@@ -51,7 +51,7 @@ const About = () => {
         ]);
     return (
         <>
-            <Skills>
+            <Skills id="skills">
                 <h2>Skills & Toolset</h2>  
                 <div>
                     <Card type="Languages" content="Javascript, Python, HTML5, CSS3, SQL, C++"/>
@@ -59,7 +59,7 @@ const About = () => {
                     <Card type="Other" content="Text-to-speech, Voice Building, Machine learning"/>
                 </div>
             </Skills>  
-            <Experience>
+            <Experience id="work-experience">
                 <h2>Work Experience</h2>  
                 <div>
                     {
@@ -69,7 +69,7 @@ const About = () => {
                     }
                 </div>   
             </Experience>  
-            <Projects>
+            <Projects id="projects">
                 <h2>Coding Projects</h2>  
                 <div>
                     {
