@@ -24,7 +24,7 @@ const Form = () => {
                     <input id="email" {...register("email", { required: true, maxLength: 50, pattern: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/i })} />
                     <label htmlFor="message">Message</label>
                     <textarea id="message" {...register("message")} />
-                    <input type="submit" />
+                    <StyledSubmit type="submit">Submit</StyledSubmit>
                 </form>
                 <img src={Computer} alt="" />
             
@@ -59,20 +59,20 @@ const FormContainer = styled(Container)`
     }
 
     input, textarea {
-        border: none;
-        border-bottom: 2px solid ${ props => props.theme.textSec };
         border-radius: 10px;
         margin-bottom: 1rem;
         padding: 0.5rem 1rem;
+        border: none;
+        border-bottom: 2px solid ${ props => props.theme.textSec };
         background: ${ props => props.theme.bgMain };
+        transition: all 0.3s ease;
         /* border: 2px solid white;
         -webkit-box-shadow: 0px 1px 14px 4px rgba(194,194,194,0.11); 
         box-shadow: 0px 1px 14px 4px rgba(194,194,194,0.11); */
 
         &:focus{
             outline: none;
-            border: 2px solid;
-            border-color: ${ props => props.theme.accentLav };
+            border-bottom: 2px solid ${ props => props.theme.accentSec };
         }
     }
 
@@ -96,7 +96,30 @@ const FormContainer = styled(Container)`
     }
 
 `
+const StyledSubmit = styled.button`
+    padding: 0.8rem 1rem;
+    margin-top: 1rem;
 
+
+    background: ${ props => props.theme.accentSec };
+    border: none;
+    
+    border-radius: 20px;
+    color: white;
+    cursor: pointer;
+    -webkit-box-shadow: 0px 1px 14px 4px rgba(194,194,194,0.11); 
+    box-shadow: 0px 1px 14px 4px rgba(194,194,194,0.11);
+    
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    transition: all 0.3s ease-in;
+
+    &:hover{
+        color: black;
+        background: ${ props => props.theme.textSec };
+    }
+`
 // const FormContainer = styled(Container)`
 
 //     > div {
