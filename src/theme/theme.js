@@ -7,8 +7,8 @@ export const lightTheme = {
 
     accentMain: "#3A3154",
     accentSec: "#E91E63",
-    
-  
+    accentBlue: "#daebed",
+    accentLav: "lavender"
   };
   
   export const darkTheme = {
@@ -20,6 +20,6 @@ export const lightTheme = {
 
     accentMain: "#3A3154",
     accentSec: "#E91E63",
-    
-  
+    accentBlue: "#daebed",
+    accentLav: "lavender",
   };

@@ -22,16 +22,15 @@ const StyledButton = styled.button`
     cursor: pointer;
     -webkit-box-shadow: 0px 1px 14px 4px rgba(194,194,194,0.11); 
     box-shadow: 0px 1px 14px 4px rgba(194,194,194,0.11);
-
+    
     font-size: 12px;
     text-transform: uppercase;
     letter-spacing: 1.2px;
-
     transition: all 0.3s ease-in;
 
-
     &:hover{
-        background: #f54438;
+        color: black;
+        background: ${ props => props.theme.accentBlue };
         transform: scale(106%, 106%);
     }
 `

@@ -133,6 +133,12 @@ html, body {
     max-width: 100%;
     overflow-x: hidden;
 }
+
+body{
+    width:100%;
+    overflow-x:hidden;
+    overflow-y:hidden;
+}
 * {
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
