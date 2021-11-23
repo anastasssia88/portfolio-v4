@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import styled from "styled-components";
 import { useForm } from "react-hook-form";
 
@@ -7,21 +7,34 @@ import {Container} from "./Wrappers"
 
 
 const Form = () => {
-    const { register, handleSubmit } = useForm();
-    const onSubmit = data => console.log(data);
+    const { register, handleSubmit, reset, formState: {errors} } = useForm();
+    const [sent, setSent] = useState(false);
+    
+    const onSubmit = data => {
+        console.log(data)
+        console.log("resetting now ... ")
+        setTimeout(() => {
+            reset();
+            setSent(true);
+        }, 1000);
+        
+    };
 
+    console.log(errors)
     return (
         <FormContainer id="contact">
             <h2>Let's talk</h2>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div>
                     <label htmlFor="name">Name*</label>
-                    <input id="name" {...register("name", { required: true, maxLength: 20})} />
+                    <input id="name" {...register("name", { required: true})} />
+                    {errors.name && <Error>It shouldn't be empty</Error>}
                 </div>
 
                 <div>
                     <label htmlFor="email">Email*</label>
-                    <input id="email" {...register("email", { required: true, maxLength: 50, pattern: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/i })} />
+                    <input id="email" {...register("email", { required: "It shouldn't be empty", pattern: {value: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/i, message: "Oops! Incorrect email"} })} />
+                    {errors.email && <Error>{errors.email.message}</Error>}
                 </div>
 
                 <div>
@@ -30,6 +43,9 @@ const Form = () => {
                 </div>
                 <StyledSubmit type="submit">Submit</StyledSubmit>
             </form>
+            {
+                sent && <p>Thanks! 🙌🏼 Talk to you soon</p>
+            }
         </FormContainer>
     )
 }
@@ -40,6 +56,15 @@ export default Form
 const FormContainer = styled(Container)`
     padding: 3rem 0;
     width: 100%;
+
+    /* successful submit message */
+    > p {
+        text-align: center;
+        background: ${ props => props.theme.accentGray};
+        padding: 1rem;
+        border-radius: 20px;
+        width: auto;
+    }
 
     > form {
         padding: 3rem 0;
@@ -134,4 +159,10 @@ const StyledSubmit = styled.button`
     &:active {
         background: #f54438;
     }
+`
+
+const Error = styled.p`
+    font-size: 12px;
+    color: ${ props => props.theme.accentSec };
+    margin-left: 1rem;
 `

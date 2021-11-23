@@ -33,14 +33,5 @@ const StyledButton = styled.button`
         background: ${ props => props.theme.accentBlue }; */
         transform: scale(106%, 106%);
     }
-
-
-    padding: 0.8rem 1rem;
-    margin: 1rem 0;
-
-    align-self: end;
-    max-height: 45%;
-    width: 98%;
-    font-size: 14px;
 `
 
