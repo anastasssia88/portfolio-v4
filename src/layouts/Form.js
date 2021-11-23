@@ -5,9 +5,6 @@ import { useForm } from "react-hook-form";
 // components
 import {Container} from "./Wrappers"
 
-// images
-import Computer from "../images/web-design.svg"
-
 
 const Form = () => {
     const { register, handleSubmit } = useForm();
@@ -130,8 +127,11 @@ const StyledSubmit = styled.button`
     cursor: pointer;
     transition: all 0.3s ease-in;
 
-    &:active{
-        /* color: black; */
+    &:hover{
+        transform: scale(106%, 106%);
+    }
+
+    &:active {
         background: #f54438;
     }
 `

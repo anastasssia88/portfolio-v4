@@ -51,15 +51,15 @@ const About = () => {
         ]);
     return (
         <>
-            <Skills id="skills">
+            <StyledContainer skills id="skills">
                 <h2>Skills & Toolset</h2>  
                 <div>
                     <Card type="Languages" content="Javascript, Python, HTML5, CSS3, SQL, C++"/>
                     <Card type="Tools" content="React.js, Next.js, Flask, Django, Postgres, MongoDB, Git"/>
                     <Card type="Other" content="Text-to-speech, Voice Building, Machine learning"/>
                 </div>
-            </Skills>  
-            <Experience id="work-experience">
+            </StyledContainer>  
+            <StyledContainer experience id="work-experience">
                 <h2>Work Experience</h2>  
                 <div>
                     {
@@ -68,8 +68,8 @@ const About = () => {
                         />)
                     }
                 </div>   
-            </Experience>  
-            <Projects id="projects">
+            </StyledContainer>  
+            <StyledContainer projects id="projects">
                 <h2>Coding Projects</h2>  
                 <div>
                     {
@@ -77,41 +77,39 @@ const About = () => {
                         />)
                     }
                 </div>     
-            </Projects>  
+            </StyledContainer>  
         </>
     )
 }
 
 export default About
 
-const Skills = styled(Container)`
 
+
+
+
+
+const StyledContainer = styled(Container)`
     > div {
-        padding: 3rem 0;
         display: flex;
         justify-content: space-between;
         align-items: space-between;
+
+        /* skills */
+        padding: ${ props => props.skills && "3rem 0"};
+        
+        /* experience */
+        margin: ${ props => props.experience && "3rem 10%"};
+        flex-direction: ${ props => props.experience && "column"};
+        border-left: ${ props => props.experience && "4px solid"};
+        border-color: ${ props => props.experience && props.theme.accentMain};
+
+        /* projects */
+        padding: ${ props => props.projects && "3rem 0"};
+        width: ${ props => props.projects && "100%"};
     }
+
 `
 
-const Experience = styled(Container)`
-    > div {
-        margin: 3rem 10%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: space-between;
-        border-left: 4px solid;
-        border-color: ${ props => props.theme.accentMain };
-    }
-`
-
-const Projects = styled(Container)`
-    > div {
-        width: 100%;
-        padding: 3rem 0;
-        display: flex;
-        justify-content: space-between;
-        align-items: space-between;
-    }
-`
+        
+                                 

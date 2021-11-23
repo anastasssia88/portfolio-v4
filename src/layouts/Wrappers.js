@@ -1,5 +1,8 @@
 import styled from "styled-components";
 
+
+// ------> HTML tags <------
+
 export const Section = styled.section`
     width: 100%;
     padding-left: 17%;
@@ -11,10 +14,35 @@ export const Section = styled.section`
 
 export const Div = styled.div`
     width: 100%;
-    padding: 1.5rem 17%;
-    
+    padding-left: 17%;
+    padding-right: 17%;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
     background: ${ props => props.theme.bgMain };
+    
+    /* flex */
+    display: ${ props => props.flex && "flex"};
+
+    /* nav */
+    flex-direction: ${ props => props.nav && "flex"};
+    justify-content: ${ props => props.nav && "flex-end"};
+    align-items: ${ props => props.nav && "center"};
+
 `
+
+export const List = styled.ul`
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 0.6rem;
+
+    /* experience  */
+    
+    /* projects */
+    justify-content: ${ props => props.projects && 'center'};
+`
+
+// ------> Compound components <------
 
 export const Container = styled.div`
     width: 100%;
@@ -24,19 +52,10 @@ export const Container = styled.div`
     padding-bottom: 4rem;
 `
 
-export const TagContainer = styled.ul`
-    margin-top: 0.6rem;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: ${ props => props.center && 'center'};
-`
 
 export const ListContainer = styled.ul`
     display: flex;
     flex-direction: row;
-
- 
 
     > li {
         margin-right: 4rem;

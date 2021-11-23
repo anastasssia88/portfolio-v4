@@ -9,7 +9,7 @@ const Footer = () => {
     return (
         <StyledDiv>
             <div>
-                <SocialBtn noMargin/>
+                <SocialBtn />
             </div>
 
             <ListContainer>
@@ -25,14 +25,9 @@ export default Footer
 
 
 const StyledDiv = styled(Div)`
-    background: ${props => props.theme.accentPink};
+    /* background: ${ props => props.theme.bgMain}; */
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-
-    > div {
-
-    }
-
 `

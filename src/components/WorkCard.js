@@ -2,35 +2,36 @@ import React from 'react'
 import styled from "styled-components";
 
 // components
-import {TagContainer} from "../layouts/Wrappers"
+import {List} from "../layouts/Wrappers"
 import Tag from "../components/Tag"
+
 
 const WorkCard = ({state, title, dates, company, description, tags}) => {
     description = description.split(". ");
     console.log(description)
 
     return (
-        <StyledDiv state={state}>
+        <StyledWorkCard state={state}>
             <h3>{title}</h3>
             <p>{dates}</p>
             <p>{company}</p>
             {
                 description.map( sentence => <p key={sentence}>- {sentence}</p>)
             }
-            <TagContainer>
+            <List experience>
                 {
                     tags.map( i => <Tag key={i} content={i}/>)
                 }
-            </TagContainer>
+            </List>
             
-        </StyledDiv>
+        </StyledWorkCard>
     )
 }
 
 export default WorkCard
 
 
-const StyledDiv = styled.div`
+const StyledWorkCard = styled.div`
     padding: 3rem 0;
     padding-left: 4rem;
 

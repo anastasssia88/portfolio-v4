@@ -3,15 +3,15 @@ import styled from "styled-components";
 
 const Tag = ({ content, color }) => {
     return (
-        <TagBox color={color}>
+        <StyledTag color={color}>
             { content }
-        </TagBox>
+        </StyledTag>
     )
 }
 
 export default Tag
 
-const TagBox = styled.li`
+const StyledTag = styled.li`
     margin-right: 0.6rem;
     margin-top: 1rem;
     padding: 0.4rem 1rem;

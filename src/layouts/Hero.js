@@ -58,6 +58,10 @@ const HeroSection = styled(Container)`
             color: ${ props => props.theme.textSec};
         }
 
+        p:nth-child(4) {
+            padding-bottom: 2.2rem;
+        }
+
         h1, h3 {
             color: ${ props => props.theme.accentMain};
         }

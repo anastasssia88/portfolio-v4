@@ -8,19 +8,19 @@ import {Voiceprint} from "@styled-icons/remix-line/Voiceprint"
 const Card = ({type, content}) => {
 
     return (
-        <CardContainer>
+        <StyledCard>
             { type == "Languages" && <Languages /> }
             { type == "Tools" && <Tools /> }
             { type == "Other" && <Voice /> }
             <p>{type}</p>
             <p>{content}</p>
-        </CardContainer>
+        </StyledCard>
     )
 }
 
 export default Card
 
-const CardContainer = styled.div`
+const StyledCard = styled.div`
     background: pink;
     /* min-height: 12rem; */
     height: auto;

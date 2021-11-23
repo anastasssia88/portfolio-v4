@@ -2,26 +2,20 @@ import React from 'react'
 import styled from "styled-components";
 
 // components
-import {TagContainer} from "../layouts/Wrappers";
+import {List} from "../layouts/Wrappers";
 import Tag from "../components/Tag";
 
 // images
 import Oxana from "../images/oxana.png"
 import Petspaw from "../images/petspaw.png"
 
-// id: 122,
-//             name: "oxana",
-//             title: "Oxana's Cakes",
-//             type: "Website",
-//             description: "Website for a local small business - bakery in Los Angeles.",
-//             tags: ["JavaScript", "HTML/CSS"],
-//             demoLink: "https://oxanascakes.netlify.app/",
+
 const Project = ({name, title, type, description, tags, demoLink}) => {
     let image = name === "oxana" ?  Oxana : Petspaw;
     console.log("DEMO LINK: " + demoLink)
 
     return (
-        <StyledDiv href={demoLink}>
+        <StyledProject href={demoLink}>
         <a href={demoLink} target="_blank">
             <img src={image} alt={name} /> 
             <div>
@@ -30,20 +24,20 @@ const Project = ({name, title, type, description, tags, demoLink}) => {
                 
                 <p>{description}</p> 
             
-                <TagContainer center>
+                <List projects>
                     {
                         tags.map( i => <Tag key={i} content={i} color="#f7e1e6" />)
                     }
-                </TagContainer>
+                </List>
             </div>
         </a>
-        </StyledDiv>
+        </StyledProject>
     )
 }
 
 export default Project
 
-const StyledDiv = styled.div`
+const StyledProject = styled.div`
     background: ${ props => props.theme.bgMain};
     -webkit-box-shadow: 0px 1px 14px 4px rgba(194,194,194,0.11); 
     box-shadow: 0px 1px 14px 4px rgba(194,194,194,0.11);
