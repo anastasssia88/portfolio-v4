@@ -35,8 +35,6 @@ export const List = styled.ul`
     flex-direction: row;
     flex-wrap: wrap;
     margin-top: 0.6rem;
-
-    /* experience  */
     
     /* projects */
     justify-content: ${ props => props.projects && 'center'};

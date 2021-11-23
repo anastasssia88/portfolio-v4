@@ -54,7 +54,7 @@ const About = () => {
             <StyledContainer skills id="skills">
                 <h2>Skills & Toolset</h2>  
                 <div>
-                    <Card type="Languages" content="Javascript, Python, HTML5, CSS3, SQL, C++"/>
+                    <Card type="Languages" content="Javascript, Python, HTML5, CSS3, SQL"/>
                     <Card type="Tools" content="React.js, Next.js, Flask, Django, Postgres, MongoDB, Git"/>
                     <Card type="Other" content="Text-to-speech, Voice Building, Machine learning"/>
                 </div>
