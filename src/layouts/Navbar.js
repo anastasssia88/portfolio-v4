@@ -1,20 +1,20 @@
 import React from 'react'
 import styled from "styled-components";
 
-import {Div} from "./Wrappers"
+import {Div, ListContainer} from "./Wrappers"
 import Button from "../components/Button"
 
 const Navbar = () => {
     return (
         <StyledNav>
-            <ListWtapper>
-                <ul>
-                    <li><a href="#skills">Skills</a></li>  
-                    <li><a href="#work-experience">Work Experience</a></li>  
-                    <li><a href="#projects">Projects</a></li>  
-                </ul>
-                <Button content="Contact"/>
-            </ListWtapper>
+                <ListWtapper>
+                    <ul>
+                        <li><a href="#skills">Skills</a></li>  
+                        <li><a href="#work-experience">Work Experience</a></li>  
+                        <li><a href="#projects">Projects</a></li>  
+                    </ul>
+                    <Button content="Contact"/>
+                </ListWtapper>
         </StyledNav>
     )
 }

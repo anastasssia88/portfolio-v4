@@ -5,9 +5,9 @@ import {LinkedinWithCircle} from '@styled-icons/entypo-social/LinkedinWithCircle
 import {Github} from '@styled-icons/bootstrap/Github'
 
 
-const SocialBtns = () => {
+const SocialBtns = ({noMargin}) => {
     return (
-        <Wrapper>
+        <Wrapper noMargin={noMargin}>
             <a href="https://twitter.com/linguanastya" target="_blank"><Twitter /></a>
             <a href="https://github.com/anastasssia88" target="_blank"><GitHub /></a>
             <a href="https://www.linkedin.com/in/anastasia-titova/" target="_blank"><LinkedIn /></a>
@@ -19,6 +19,7 @@ export default SocialBtns
 
 const Wrapper = styled.div`
     padding-top: 2.2rem; 
+    padding-top: ${ props => props.noMargin && "0rem"};
     height: 100%;
     /* justify-self: flex-end; */
 

@@ -31,3 +31,24 @@ export const TagContainer = styled.ul`
     flex-wrap: wrap;
     justify-content: ${ props => props.center && 'center'};
 `
+
+export const ListContainer = styled.ul`
+    display: flex;
+    flex-direction: row;
+
+ 
+
+    > li {
+        margin-right: 4rem;
+        cursor: pointer;       
+    }
+
+    > li > a {
+        color: ${ props => props.theme.textMain };
+        transition: all 0.3s ease;
+
+        &:hover {
+            color: ${ props => props.theme.accentSec };
+        }
+    }
+`
