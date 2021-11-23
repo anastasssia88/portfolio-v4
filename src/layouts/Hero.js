@@ -51,6 +51,10 @@ const HeroSection = styled(Container)`
     flex-direction: column;
     align-items: space-between;
     justify-content: space-between;
+
+    @media (max-width: 1024px) {
+        padding-right: 0.5rem;    
+    }
     
     @media (max-width: 768px) {
         padding-right: 0;
@@ -81,8 +85,8 @@ const HeroSection = styled(Container)`
 
     h1 {
       padding: 0.3rem 0 1rem 0;
-      @media (max-width: 768px) {
-        line-height: 2.5rem;
+      @media (max-width: 1024px) {
+        line-height: 3rem;
       }
     }
     h3 {
@@ -106,6 +110,9 @@ const HeroSection = styled(Container)`
     
     img {
       width: 25rem;
+      @media (max-width: 1024px) {
+        width: 100%;
+      }
       @media (max-width: 768px) {
         width: 100%;
         border-radius: 10px;

@@ -58,8 +58,31 @@ const StyledWorkCard = styled.div`
     border-color: ${(props) => props.theme.accentMain};
     background: ${(props) => props.state === "current" && props.theme.bgMain};
 
+    /* @media (max-width: 375px) {
+      left: 6%;
+    } */
+
+    
+    @media (max-width: 1024px) {
+      left: 22.7%;
+    }
     @media (max-width: 768px) {
-      left: 7.2%;
+      left: 8.7%;
+    }
+    @media (max-width: 540px) {
+      left: 8%;
+    }
+    @media (max-width: 425px) {
+      left: 7.4%;
+    }
+    @media (max-width: 375px) {
+      left: 7.1%;
+    }
+    @media (max-width: 320px) {
+      left: 7%;
+    }
+    @media (max-width: 280px) {
+      left: 5.9%;
     }
   }
 
