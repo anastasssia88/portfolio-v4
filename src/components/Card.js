@@ -21,7 +21,6 @@ export default Card;
 
 const StyledCard = styled.div`
   background: pink;
-  /* min-height: 12rem; */
   height: auto;
   width: 30%;
   border-radius: 10px;
@@ -33,8 +32,23 @@ const StyledCard = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-
   padding: 2rem;
+
+  @media (max-width: 768px) {
+      width: 100%;
+    }
+
+  &:first-child {
+    @media (max-width: 768px) {
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  &:nth-child(2) {
+    @media (max-width: 768px) {
+      margin-bottom: 1.5rem;
+    }
+  }
 
   p {
     padding-top: 1rem;

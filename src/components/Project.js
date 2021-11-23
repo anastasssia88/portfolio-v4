@@ -41,12 +41,14 @@ const StyledProject = styled.div`
   -webkit-box-shadow: 0px 1px 14px 4px rgba(194, 194, 194, 0.11);
   box-shadow: 0px 1px 14px 4px rgba(194, 194, 194, 0.11);
   border-radius: 10px;
-  /* min-width: 45%;
-    max-width: 50%; */
   width: 47%;
   cursor: pointer;
-
   transition: all 0.3s ease-out;
+
+  @media (max-width: 768px) {
+      width: 100%;
+      margin-top: 1rem;
+    }
 
   &:hover {
     transform: scale(103%, 103%);
@@ -71,6 +73,10 @@ const StyledProject = styled.div`
   a > div {
     padding: 1rem 2rem 2rem 2rem;
     color: ${(props) => props.theme.textMain};
+
+    @media (max-width: 768px) {
+      padding: 1rem;
+    }
 
     p {
       text-align: center;

@@ -34,7 +34,7 @@ const About = () => {
       state: "past",
       title: "Frontend Engineer",
       dates: "Jan 2019 - Aug 2021",
-      company: "Upwork",
+      company: "Freelance",
       description:
         "Developed performant and accessible user interfaces with Reactjs and Nextjs. Reduced by 20% cost-per-lead by investigating and improving the performance of a website by eliminating render-blocking CSS and JavaScript. Increased  development productivity by 2 hours/day by refactoring & buidling reusable components.",
       tags: [
@@ -130,10 +130,20 @@ const About = () => {
 export default About;
 
 const StyledContainer = styled(Container)`
+  max-width: 100%;
+
+  @media (max-width: 768px) {
+      padding-bottom: 0;
+    }
+  
   > div {
     display: flex;
     justify-content: space-between;
     align-items: space-between;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
 
     /* skills */
     padding: ${(props) => props.skills && "3rem 0"};
@@ -143,6 +153,9 @@ const StyledContainer = styled(Container)`
     flex-direction: ${(props) => props.experience && "column"};
     border-left: ${(props) => props.experience && "4px solid"};
     border-color: ${(props) => props.experience && props.theme.accentMain};
+    @media (max-width: 768px) {
+      margin: ${(props) => props.experience && "3rem 0%"};
+    }
 
     /* projects */
     padding: ${(props) => props.projects && "3rem 0"};

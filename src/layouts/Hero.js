@@ -36,6 +36,11 @@ const HeroSection = styled(Container)`
   display: flex;
   flex-direction: row;
 
+  @media (max-width: 768px) {
+     padding: 0rem 0 2rem 0;
+     flex-direction: column;
+  }
+
   div {
     height: 100%;
   }
@@ -46,6 +51,12 @@ const HeroSection = styled(Container)`
     flex-direction: column;
     align-items: space-between;
     justify-content: space-between;
+    
+    @media (max-width: 768px) {
+        padding-right: 0;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
 
     p {
       font-size: 18px;
@@ -70,17 +81,35 @@ const HeroSection = styled(Container)`
 
     h1 {
       padding: 0.3rem 0 1rem 0;
+      @media (max-width: 768px) {
+        line-height: 2.5rem;
+      }
     }
     h3 {
       padding: 1rem 0;
       padding-right: 5rem;
     }
+
+    h1, h3 {
+      @media (max-width: 768px) {
+        padding: 1rem 0;
+      }
+    }
   }
 
   div:nth-child(2) {
-    /* width: 30%; */
+    @media (max-width: 768px) {
+        display: grid;
+        place-items: center;
+        padding-top: 2rem;
+      }
+    
     img {
       width: 25rem;
+      @media (max-width: 768px) {
+        width: 100%;
+        border-radius: 10px;
+      }
     }
   }
 `;

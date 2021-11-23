@@ -35,4 +35,11 @@ const StyledDiv = styled(Div)`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+
+
+  @media (max-width: 768px) {
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+    }
 `;

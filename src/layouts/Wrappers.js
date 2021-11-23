@@ -9,6 +9,11 @@ export const Section = styled.section`
   padding-top: 6rem;
   padding-bottom: 6rem;
   background: ${(props) => props.theme.bgMain};
+
+  @media (max-width: 768px) {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
 `;
 
 export const Div = styled.div`
@@ -19,13 +24,21 @@ export const Div = styled.div`
   padding-bottom: 1.5rem;
   background: ${(props) => props.theme.bgMain};
 
+  @media (max-width: 768px) {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
   /* flex */
   display: ${(props) => props.flex && "flex"};
 
   /* nav */
-  flex-direction: ${(props) => props.nav && "flex"};
+  flex-direction: ${(props) => props.nav && "row"};
   justify-content: ${(props) => props.nav && "flex-end"};
   align-items: ${(props) => props.nav && "center"};
+  @media (max-width: 768px) {
+      flex-direction: ${(props) => props.nav && "column"};
+    }
 `;
 
 export const List = styled.ul`
@@ -52,9 +65,21 @@ export const ListContainer = styled.ul`
   display: flex;
   flex-direction: row;
 
+  @media (max-width: 768px) {
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
   > li {
     margin-right: 4rem;
     cursor: pointer;
+
+    @media (max-width: 768px) {
+      margin-right: 0;
+      margin-top: 1rem;
+    }
   }
 
   > li > a {

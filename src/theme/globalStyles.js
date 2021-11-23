@@ -136,6 +136,7 @@ html, body {
 
 body{
     width:100%;
+    max-width: 100vw;
     overflow-x:hidden;
     overflow-y:hidden;
 }

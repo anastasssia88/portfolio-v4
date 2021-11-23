@@ -73,6 +73,9 @@ const FormContainer = styled(Container)`
     padding: 1rem;
     border-radius: 20px;
     width: auto;
+    @media (max-width: 768px) {
+      padding: 1.5rem 1rem;
+    }
   }
 
   > form {
@@ -85,18 +88,40 @@ const FormContainer = styled(Container)`
     div:first-child {
       grid-column: 1 / 3;
       grid-row: 1;
+      @media (max-width: 768px) {
+        grid-column: 1;
+        grid-row: 1;
+      }
     }
     div:nth-child(2) {
       grid-column: 3 / 5;
       grid-row: 1;
+      @media (max-width: 768px) {
+        grid-column: 1;
+        grid-row: 2;
+      }
     }
     div:nth-child(3) {
       grid-column: 1 / 4;
       grid-row: 2;
+      @media (max-width: 768px) {
+        grid-column: 1;
+        grid-row: 3;
+      }
     }
     div:last-child {
       grid-column: 4 / 5;
       grid-row: 2;
+      @media (max-width: 768px) {
+        grid-column: 1;
+        grid-row: 4;
+      }
+    }
+
+    @media (max-width: 768px) {
+      grid-template-columns: repeat(1, auto);
+      gap: 0.5rem 1rem;
+      grid-auto-rows: minmax(auto, auto);
     }
   }
 
@@ -140,6 +165,7 @@ const FormContainer = styled(Container)`
     color: ${(props) => props.theme.textSec};
   }
 `;
+
 const StyledSubmit = styled.button`
   align-self: end;
   padding: 0.8rem 1rem;
@@ -156,9 +182,14 @@ const StyledSubmit = styled.button`
   color: white;
   text-transform: uppercase;
   letter-spacing: 1.2px;
-
   cursor: pointer;
   transition: all 0.3s ease-in;
+
+  @media (max-width: 768px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
 
   &:hover {
     transform: scale(106%, 106%);

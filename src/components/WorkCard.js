@@ -32,6 +32,11 @@ const StyledWorkCard = styled.div`
   padding: 3rem 0;
   padding-left: 4rem;
 
+  @media (max-width: 768px) {
+    padding: 2rem 0;
+    padding-left: 2rem;
+  }
+
   h3 {
     color: ${(props) => props.theme.accentMain};
     font-size: 18px;
@@ -52,6 +57,10 @@ const StyledWorkCard = styled.div`
     background: ${(props) => props.theme.accentMain};
     border-color: ${(props) => props.theme.accentMain};
     background: ${(props) => props.state === "current" && props.theme.bgMain};
+
+    @media (max-width: 768px) {
+      left: 7.2%;
+    }
   }
 
   /* p:first-child {
