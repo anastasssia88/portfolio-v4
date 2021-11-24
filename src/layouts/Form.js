@@ -27,7 +27,7 @@ const Form = () => {
   return (
     <FormContainer id="contact">
       <h2>Let's talk</h2>
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form onSubmit={handleSubmit(onSubmit)} action="POST" data-netlify="true">
         <div>
           <label htmlFor="name">Name*</label>
           <input id="name" {...register("name", { required: true })} />
