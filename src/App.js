@@ -8,13 +8,13 @@ import Navbar from "./layouts/Navbar";
 import Hero from "./layouts/Hero";
 import About from "./layouts/About";
 import Form from "./layouts/Form";
+import FormTest from "./layouts/FormTest";
 import Footer from "./layouts/Footer";
 import { Section } from "./layouts/Wrappers";
 
 // images
 import bgImage from "./images/bg-light.png";
-import bgImageMobile from "./images/bg-mobile.png"
-
+import bgImageMobile from "./images/bg-mobile.png";
 
 const App = () => {
   const [theme, setTheme] = useState(lightTheme);
@@ -27,7 +27,7 @@ const App = () => {
         <MainSection>
           <Hero />
           <About />
-          <Form />
+          <FormTest />
         </MainSection>
       </main>
       <footer>
@@ -46,7 +46,7 @@ const MainSection = styled(Section)`
   max-width: 100vw;
 
   @media (max-width: 768px) {
-     background-image: url(${bgImageMobile});
+    background-image: url(${bgImageMobile});
   }
 
   h2 {
