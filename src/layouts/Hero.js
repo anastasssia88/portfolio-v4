@@ -32,12 +32,13 @@ export default Hero;
 
 const HeroSection = styled(Container)`
   padding: 1rem 0 4rem 0;
+  /* padding: 4rem 0 6rem 0; */
   display: flex;
   flex-direction: row;
 
   @media (max-width: 768px) {
-     padding: 0rem 0 2rem 0;
-     flex-direction: column;
+    padding: 0rem 0 2rem 0;
+    flex-direction: column;
   }
 
   div {
@@ -52,13 +53,13 @@ const HeroSection = styled(Container)`
     justify-content: space-between;
 
     @media (max-width: 1024px) {
-        padding-right: 0.5rem;    
+      padding-right: 0.5rem;
     }
-    
+
     @media (max-width: 768px) {
-        padding-right: 0;
-        align-items: flex-start;
-        justify-content: flex-start;
+      padding-right: 0;
+      align-items: flex-start;
+      justify-content: flex-start;
     }
 
     p {
@@ -93,7 +94,8 @@ const HeroSection = styled(Container)`
       padding-right: 5rem;
     }
 
-    h1, h3 {
+    h1,
+    h3 {
       @media (max-width: 768px) {
         padding: 1rem 0;
       }
@@ -102,11 +104,11 @@ const HeroSection = styled(Container)`
 
   div:nth-child(2) {
     @media (max-width: 768px) {
-        display: grid;
-        place-items: center;
-        padding-top: 2rem;
-      }
-    
+      display: grid;
+      place-items: center;
+      padding-top: 2rem;
+    }
+
     img {
       width: 25rem;
       @media (max-width: 1024px) {

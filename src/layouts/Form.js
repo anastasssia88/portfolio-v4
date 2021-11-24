@@ -33,7 +33,7 @@ const Form = () => {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({
-        "form-name": "react-validation-form",
+        "form-name": "contact-form",
         ...data,
       }),
     })
@@ -47,18 +47,15 @@ const Form = () => {
       });
   };
 
-  // fetch('/', {
-  //   method: 'POST',
-  //   headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-  //   body: encode({
-  //       'form-name': 'react-validation-form',
-  //       ...data,
-  //   }),
-
   return (
     <FormContainer id="contact">
       <h2>Let's talk</h2>
-      <form onSubmit={handleSubmit(onSubmit)} action="POST" data-netlify="true">
+      <form
+        name="contact-form"
+        onSubmit={handleSubmit(onSubmit)}
+        action="POST"
+        data-netlify="true"
+      >
         <div>
           <label htmlFor="name">Name*</label>
           <input id="name" {...register("name", { required: true })} />
