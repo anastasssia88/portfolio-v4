@@ -46,6 +46,10 @@ const HeroSection = styled(Container)`
 
   div {
     height: 100%;
+
+    @media only screen and (device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) {
+      height: auto;
+    }
   }
 
   div:first-child {
@@ -112,6 +116,11 @@ const HeroSection = styled(Container)`
       padding-top: 2rem;
     }
 
+    /* HERE */
+    @media only screen and (device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) {
+      padding-top: 0;
+    }
+
     img {
       width: 25rem;
 
@@ -121,11 +130,6 @@ const HeroSection = styled(Container)`
       @media (max-width: 768px) {
         width: 100%;
         border-radius: 10px;
-      }
-      @media only screen and (device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) {
-        width: 100%;
-        border-radius: 10px;
-        margin-top: -2rem;
       }
     }
   }
