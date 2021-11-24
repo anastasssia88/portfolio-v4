@@ -115,7 +115,7 @@ const FormContainer = styled(Container)`
     gap: 0.5rem 2rem;
     grid-auto-rows: minmax(auto, auto);
 
-    div:first-child {
+    div:nth-child(2) {
       grid-column: 1 / 3;
       grid-row: 1;
       @media (max-width: 768px) {
@@ -123,7 +123,7 @@ const FormContainer = styled(Container)`
         grid-row: 1;
       }
     }
-    div:nth-child(2) {
+    div:nth-child(3) {
       grid-column: 3 / 5;
       grid-row: 1;
       @media (max-width: 768px) {
@@ -131,7 +131,7 @@ const FormContainer = styled(Container)`
         grid-row: 2;
       }
     }
-    div:nth-child(3) {
+    div:nth-child(4) {
       grid-column: 1 / 4;
       grid-row: 2;
       @media (max-width: 768px) {
