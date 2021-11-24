@@ -32,12 +32,15 @@ export default Hero;
 
 const HeroSection = styled(Container)`
   padding: 1rem 0 4rem 0;
-  /* padding: 4rem 0 6rem 0; */
   display: flex;
   flex-direction: row;
 
+  @media only screen and (device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) {
+    padding: 0rem 0 4rem 0;
+  }
+
   @media (max-width: 768px) {
-    padding: 0rem 0 2rem 0;
+    padding: 0rem 0 6rem 0;
     flex-direction: column;
   }
 
@@ -111,6 +114,7 @@ const HeroSection = styled(Container)`
 
     img {
       width: 25rem;
+
       @media (max-width: 1024px) {
         width: 100%;
       }
