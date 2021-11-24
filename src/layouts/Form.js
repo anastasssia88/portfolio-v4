@@ -14,7 +14,16 @@ const Form = () => {
   } = useForm();
   const [sent, setSent] = useState(false);
 
-  const handleSubmit = (data, e) => {
+  const encode = (data) => {
+    return Object.keys(data)
+      .map(
+        (key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
+      )
+      .join("&");
+  };
+
+  const onError = (errors, e) => console.log(errors, e);
+  const onSubmit = (data, e) => {
     e.preventDefault();
     console.log("Sending request with form data ...");
     fetch("/", {
@@ -40,7 +49,7 @@ const Form = () => {
       <h2>Let's talk</h2>
       <form
         name="contact-form"
-        onSubmit={handleSubmit}
+        onSubmit={handleSubmit(onSubmit, onError)}
         method="POST"
         action="POST"
         data-netlify="true"
