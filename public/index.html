@@ -28,18 +28,18 @@
     <title>Anastasia Titova</title>
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-
     <form
-        data-netlify="true"
+        netlify
+        netlify-honeypot="bot-field"
         name="contact"
         hidden
       >
-          <input id="name" name="name" />
-          <input id="email" name="email" />
-          <textarea id="message" name="message" />
-      </form>
+          <input name="name" />
+          <input name="email" />
+          <textarea name="message"></textarea>
+    </form>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
 
 
   </body>
