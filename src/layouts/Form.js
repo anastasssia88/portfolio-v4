@@ -80,9 +80,7 @@ const Form = () => {
           <label htmlFor="message">Message</label>
           <textarea id="message" {...register("message")} />
         </div>
-        <StyledSubmit type="submit" form="name" value="Submit">
-          Submit
-        </StyledSubmit>
+        <StyledSubmit type="submit">Submit</StyledSubmit>
       </form>
       {sent && <p>Thanks! 🙌🏼 Talk to you soon</p>}
     </FormContainer>
