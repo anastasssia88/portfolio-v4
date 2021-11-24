@@ -49,12 +49,15 @@ const Form = () => {
     <FormContainer id="contact">
       <h2>Let's talk</h2>
       <form
-        name="contact-form"
-        onSubmit={handleSubmit(onSubmit, onError)}
+        action="/success"
         method="POST"
-        action="POST"
         data-netlify="true"
-        data-netlify-honeypot="bot-field"
+        // name="contact-form"
+        // onSubmit={handleSubmit(onSubmit, onError)}
+        // method="POST"
+        // action="POST"
+        // data-netlify="true"
+        // data-netlify-honeypot="bot-field"
       >
         <div>
           <label htmlFor="name">Name*</label>
