@@ -56,7 +56,7 @@ const Form = () => {
         data-netlify-honeypot="bot-field"
         name="contact"
       >
-        {/* <input type="hidden" name="form-name" value="contact" /> */}
+        <input type="hidden" name="form-name" value="contact" />
         <div>
           <label htmlFor="name">Name*</label>
           <input id="name" {...register("name", { required: true })} />
