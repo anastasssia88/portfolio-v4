@@ -31,7 +31,7 @@ const Form = () => {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({
-        "form-name": "contact-form",
+        "form-name": "contact",
         ...data,
       }),
     })
@@ -53,6 +53,7 @@ const Form = () => {
         method="POST"
         data-netlify="true"
         data-netlify-honeypot="bot-field"
+        name="contact"
       >
         <div>
           <label htmlFor="name">Name*</label>
