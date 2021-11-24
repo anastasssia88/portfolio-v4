@@ -13,7 +13,6 @@ import Petspaw from "../images/petspaw.png";
 
 const Project = ({ name, title, type, description, tags, demoLink }) => {
   let image = name === "oxana" ? Oxana : Petspaw;
-  console.log("DEMO LINK: " + demoLink);
 
   // animations
   const controls = useAnimation();
