@@ -36,7 +36,7 @@ const HeroSection = styled(Container)`
   flex-direction: row;
 
   @media only screen and (device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) {
-    padding: 0rem 0 4rem 0;
+    padding: 0rem 0 2rem 0;
   }
 
   @media (max-width: 768px) {
@@ -118,7 +118,7 @@ const HeroSection = styled(Container)`
 
     /* HERE */
     @media only screen and (device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) {
-      padding-top: 0;
+      padding-top: 0.5rem;
     }
 
     img {
