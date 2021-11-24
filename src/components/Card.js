@@ -1,7 +1,7 @@
-import React, {useEffect} from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import { motion, useAnimation } from "framer-motion";
-import {useInView} from "react-intersection-observer";
+import { useInView } from "react-intersection-observer";
 
 // components
 import { CodeSlash } from "@styled-icons/bootstrap/CodeSlash";
@@ -13,9 +13,9 @@ const Card = ({ type, content }) => {
   const controls = useAnimation();
   const [ref, inView] = useInView();
   const popUp = {
-    visible: { opacity: 1, y: 0 , transition: { duration: 0.5 } },
-    hidden: { opacity: 0.7, y: 50 }
-  }
+    visible: { y: 0, transition: { duration: 0.5 } },
+    hidden: { y: 40 },
+  };
   useEffect(() => {
     if (inView) {
       controls.start("visible");
@@ -23,7 +23,7 @@ const Card = ({ type, content }) => {
   }, [controls, inView]);
 
   return (
-    <StyledCard ref={ref} variants = {popUp} animate={controls} initial="hidden">
+    <StyledCard ref={ref} variants={popUp} animate={controls} initial="hidden">
       {type === "Languages" && <Languages />}
       {type === "Tools" && <Tools />}
       {type === "Other" && <Voice />}
@@ -51,8 +51,8 @@ const StyledCard = styled(motion.div)`
   padding: 2rem;
 
   @media (max-width: 768px) {
-      width: 100%;
-    }
+    width: 100%;
+  }
 
   &:first-child {
     @media (max-width: 768px) {

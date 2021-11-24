@@ -1,7 +1,7 @@
-import React, {useEffect} from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import { motion, useAnimation } from "framer-motion";
-import {useInView} from "react-intersection-observer";
+import { useInView } from "react-intersection-observer";
 
 // components
 import { List } from "../layouts/Wrappers";
@@ -12,7 +12,6 @@ import Oxana from "../images/oxana.png";
 import Petspaw from "../images/petspaw.png";
 
 const Project = ({ name, title, type, description, tags, demoLink }) => {
-  
   let image = name === "oxana" ? Oxana : Petspaw;
   console.log("DEMO LINK: " + demoLink);
 
@@ -20,9 +19,9 @@ const Project = ({ name, title, type, description, tags, demoLink }) => {
   const controls = useAnimation();
   const [ref, inView] = useInView();
   const popUp = {
-    visible: { opacity: 1, y: 0 , transition: { duration: 0.5 } },
-    hidden: { opacity: 0.7, y: 50 }
-  }
+    visible: { y: 0, transition: { duration: 0.5 } },
+    hidden: { y: 40 },
+  };
   useEffect(() => {
     if (inView) {
       controls.start("visible");
@@ -30,9 +29,9 @@ const Project = ({ name, title, type, description, tags, demoLink }) => {
   }, [controls, inView]);
 
   return (
-    <StyledProject 
+    <StyledProject
       ref={ref}
-      variants = {popUp}
+      variants={popUp}
       animate={controls}
       initial="hidden"
       href={demoLink}
@@ -72,9 +71,9 @@ const StyledProject = styled(motion.div)`
   transition: all 0.3s ease-out;
 
   @media (max-width: 768px) {
-      width: 100%;
-      margin-top: 1rem;
-    }
+    width: 100%;
+    margin-top: 1rem;
+  }
 
   /* &:hover {
     transform: scale(103%, 103%);
