@@ -5,6 +5,12 @@ import { useForm } from "react-hook-form";
 // components
 import { Container } from "./Wrappers";
 
+function encode(data) {
+  return Object.keys(data)
+    .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .join("&");
+}
+
 const Form = () => {
   const {
     register,
@@ -14,16 +20,41 @@ const Form = () => {
   } = useForm();
   const [sent, setSent] = useState(false);
 
-  const onSubmit = (data) => {
-    console.log(data);
-    console.log("resetting now ... ");
-    setTimeout(() => {
-      reset();
-      setSent(true);
-    }, 1000);
+  const onSubmit = (data, e) => {
+    // console.log(data);
+    // console.log("resetting now ... ");
+    // setTimeout(() => {
+    //   reset();
+    //   setSent(true);
+    // }, 1000);
+    e.preventDefault();
+    const form = e.target;
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({
+        "form-name": "react-validation-form",
+        ...data,
+      }),
+    })
+      .then((response) => {
+        reset();
+        setSent(true);
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
-  console.log(errors);
+  // fetch('/', {
+  //   method: 'POST',
+  //   headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+  //   body: encode({
+  //       'form-name': 'react-validation-form',
+  //       ...data,
+  //   }),
+
   return (
     <FormContainer id="contact">
       <h2>Let's talk</h2>
@@ -41,7 +72,8 @@ const Form = () => {
             {...register("email", {
               required: "It shouldn't be empty",
               pattern: {
-                value: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/i,
+                value:
+                  /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/i,
                 message: "Oops! Incorrect email",
               },
             })}
@@ -189,7 +221,7 @@ const StyledSubmit = styled.button`
     display: flex;
     justify-content: center;
     align-items: center;
-    }
+  }
 
   &:hover {
     transform: scale(106%, 106%);
