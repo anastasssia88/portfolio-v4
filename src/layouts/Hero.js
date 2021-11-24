@@ -122,6 +122,11 @@ const HeroSection = styled(Container)`
         width: 100%;
         border-radius: 10px;
       }
+      @media only screen and (device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) {
+        width: 100%;
+        border-radius: 10px;
+        margin-top: -2rem;
+      }
     }
   }
 `;
