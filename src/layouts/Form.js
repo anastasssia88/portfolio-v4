@@ -52,7 +52,7 @@ const Form = () => {
         action="/success"
         method="POST"
         data-netlify="true"
-        // name="contact-form"
+        name="contact-form"
         // onSubmit={handleSubmit(onSubmit, onError)}
         // method="POST"
         // action="POST"
@@ -85,7 +85,9 @@ const Form = () => {
           <label htmlFor="message">Message</label>
           <textarea id="message" {...register("message")} />
         </div>
-        <StyledSubmit type="submit">Submit</StyledSubmit>
+        <StyledSubmit type="submit" form="name" value="Submit">
+          Submit
+        </StyledSubmit>
       </form>
       {sent && <p>Thanks! 🙌🏼 Talk to you soon</p>}
     </FormContainer>
