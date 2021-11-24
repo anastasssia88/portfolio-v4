@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
 // ------> HTML tags <------
 
@@ -16,7 +17,7 @@ export const Section = styled.section`
   }
 `;
 
-export const Div = styled.div`
+export const Div = styled(motion.div)`
   width: 100%;
   padding-left: 17%;
   padding-right: 17%;

@@ -1,17 +1,23 @@
 import React, {useState} from "react";
 import styled from "styled-components";
 
-import { Div, ListContainer, ListWrapper } from "./Wrappers";
+// components
+import { Div, ListContainer } from "./Wrappers";
 import Button from "../components/Button";
 import Hamburger from "../components/Hamburger"
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
 
+
   return (
     <StyledNav>
       <Hamburger open={open} setOpen={setOpen} />
-      <StyledDiv open={open} flex nav>
+      <StyledDiv 
+        open={open} 
+        flex 
+        nav
+        >
         <ListContainer open={open}>
           <li>
             <a href="#skills">Skills</a>
@@ -35,6 +41,7 @@ const StyledNav = styled.nav`
   min-height: 3rem;
   background: ${ props => props.theme.bgMain};
   @media (max-width: 768px) {
+    min-height: 3.5rem;
     padding: 1rem 5%;
     display: flex;
     flex-direction: column;
@@ -45,9 +52,10 @@ const StyledNav = styled.nav`
 
 
 const StyledDiv = styled(Div)`
+  transition: all 0.6s ease-out;
   @media (max-width: 768px) {
-    display: ${ props => props.open == true ? "flex": "none"};
-
+    /* display: ${ props => props.open === true ? "flex": "none"}; */
+    margin-top: ${ props => props.open === true ? "0px": "-30rem"};
   }
 `
 

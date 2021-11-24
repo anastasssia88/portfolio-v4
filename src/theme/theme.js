@@ -27,3 +27,14 @@ export const darkTheme = {
   accentPink: "#f7e1e6",
   accentGray: "#e0e0e0",
 };
+
+// const size = {
+//   mobileS: '320px',
+//   mobileM: '375px',
+//   mobileL: '425px',
+//   tablet: '768px',
+//   laptop: '1024px',
+//   laptopL: '1440px',
+//   desktop: '2560px'
+// };
+

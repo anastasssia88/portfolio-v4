@@ -75,7 +75,9 @@ const About = () => {
   return (
     <>
       <StyledContainer skills id="skills">
-        <h2>Skills & Toolset</h2>
+        <h2>
+          Skills & Toolset
+        </h2>
         <div>
           <Card
             type="Languages"

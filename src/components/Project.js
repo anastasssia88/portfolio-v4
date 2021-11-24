@@ -1,5 +1,7 @@
-import React from "react";
+import React, {useEffect} from "react";
 import styled from "styled-components";
+import { motion, useAnimation } from "framer-motion";
+import {useInView} from "react-intersection-observer";
 
 // components
 import { List } from "../layouts/Wrappers";
@@ -10,12 +12,36 @@ import Oxana from "../images/oxana.png";
 import Petspaw from "../images/petspaw.png";
 
 const Project = ({ name, title, type, description, tags, demoLink }) => {
+  
   let image = name === "oxana" ? Oxana : Petspaw;
   console.log("DEMO LINK: " + demoLink);
 
+  // animations
+  const controls = useAnimation();
+  const [ref, inView] = useInView();
+  const popUp = {
+    visible: { opacity: 1, y: 0 , transition: { duration: 0.5 } },
+    hidden: { opacity: 0.7, y: 50 }
+  }
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    }
+  }, [controls, inView]);
+
   return (
-    <StyledProject href={demoLink}>
-      <a href={demoLink} target="_blank">
+    <StyledProject 
+      ref={ref}
+      variants = {popUp}
+      animate={controls}
+      initial="hidden"
+      href={demoLink}
+      whileHover={{
+        scale: 1.04,
+        transition: { duration: 0.3 },
+      }}
+    >
+      <a href={demoLink} target="_blank" rel="noreferrer">
         <img src={image} alt={name} />
         <div>
           <p>{type}</p>
@@ -36,7 +62,7 @@ const Project = ({ name, title, type, description, tags, demoLink }) => {
 
 export default Project;
 
-const StyledProject = styled.div`
+const StyledProject = styled(motion.div)`
   background: ${(props) => props.theme.bgMain};
   -webkit-box-shadow: 0px 1px 14px 4px rgba(194, 194, 194, 0.11);
   box-shadow: 0px 1px 14px 4px rgba(194, 194, 194, 0.11);
@@ -50,18 +76,13 @@ const StyledProject = styled.div`
       margin-top: 1rem;
     }
 
-  &:hover {
+  /* &:hover {
     transform: scale(103%, 103%);
-  }
+  } */
 
   a {
     display: flex;
     flex-direction: column;
-    /* color: ${(props) => props.theme.textMain};
-
-        &:hover{
-            color: ${(props) => props.theme.textMain};
-        } */
   }
 
   a > img {

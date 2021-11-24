@@ -1,16 +1,32 @@
-import React from "react";
+import React, {useEffect} from "react";
 import styled from "styled-components";
+import { motion, useAnimation } from "framer-motion";
+import {useInView} from "react-intersection-observer";
 
+// components
 import { CodeSlash } from "@styled-icons/bootstrap/CodeSlash";
 import { ReactLogo } from "@styled-icons/fa-brands/ReactLogo";
 import { Voiceprint } from "@styled-icons/remix-line/Voiceprint";
 
 const Card = ({ type, content }) => {
+  // animations
+  const controls = useAnimation();
+  const [ref, inView] = useInView();
+  const popUp = {
+    visible: { opacity: 1, y: 0 , transition: { duration: 0.5 } },
+    hidden: { opacity: 0.7, y: 50 }
+  }
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    }
+  }, [controls, inView]);
+
   return (
-    <StyledCard>
-      {type == "Languages" && <Languages />}
-      {type == "Tools" && <Tools />}
-      {type == "Other" && <Voice />}
+    <StyledCard ref={ref} variants = {popUp} animate={controls} initial="hidden">
+      {type === "Languages" && <Languages />}
+      {type === "Tools" && <Tools />}
+      {type === "Other" && <Voice />}
       <p>{type}</p>
       <p>{content}</p>
     </StyledCard>
@@ -19,7 +35,7 @@ const Card = ({ type, content }) => {
 
 export default Card;
 
-const StyledCard = styled.div`
+const StyledCard = styled(motion.div)`
   background: pink;
   height: auto;
   width: 30%;

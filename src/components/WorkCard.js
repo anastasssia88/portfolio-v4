@@ -1,5 +1,7 @@
-import React from "react";
+import React, {useEffect} from "react";
 import styled from "styled-components";
+import { motion, useAnimation } from "framer-motion";
+import {useInView} from "react-intersection-observer";
 
 // components
 import { List } from "../layouts/Wrappers";
@@ -7,10 +9,31 @@ import Tag from "../components/Tag";
 
 const WorkCard = ({ state, title, dates, company, description, tags }) => {
   description = description.split(". ");
-  console.log(description);
+
+  // animations
+  // const controls = useAnimation();
+  // const [ref, inView] = useInView();
+  // const fadeIn = {
+  //   visible: { opacity: 1, scale: 1, transition: { duration: 1 } },
+  //   hidden: { opacity: 0, scale: 0 }
+  // }
+
+  // useEffect(() => {
+  //   if (inView) {
+  //     controls.start("visible");
+  //   }
+  // }, [controls, inView]);
 
   return (
-    <StyledWorkCard state={state}>
+    <StyledWorkCard 
+      
+      state={state}
+
+      // ref={ref}
+      // variants = {fadeIn}
+      // animate={controls}
+      // initial="hidden"
+    >
       <h3>{title}</h3>
       <p>{dates}</p>
       <p>{company}</p>
@@ -28,7 +51,7 @@ const WorkCard = ({ state, title, dates, company, description, tags }) => {
 
 export default WorkCard;
 
-const StyledWorkCard = styled.div`
+const StyledWorkCard = styled(motion.div)`
   padding: 3rem 0;
   padding-left: 4rem;
 

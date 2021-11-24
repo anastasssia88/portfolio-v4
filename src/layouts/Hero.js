@@ -6,7 +6,6 @@ import { Container } from "./Wrappers";
 import SocialBtns from "../components/SocialBtns";
 
 // images
-import bgImage from "../images/bg-light.png";
 import Avatar from "../images/profile_pic.jpg";
 
 const Hero = () => {

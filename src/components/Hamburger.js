@@ -5,7 +5,7 @@ import {Close} from "@styled-icons/evaicons-solid/Close";
 
 const Hamburger = ({open, setOpen}) => {
     const handleClick = () => {
-        open === true ? setOpen(false) : setOpen(true);; 
+        open === true ? setOpen(false) : setOpen(true);
     }
     return (
         <StyledButton>
@@ -22,11 +22,12 @@ const StyledButton = styled.button`
     display: none;
     @media (max-width: 768px) {
         display: flex;
-
         border: none;
         background: ${ props=> props.theme.bgMain};
         transition: all 0.3s ease;
         cursor: pointer;
+        position: absolute;
+        top: 0.5rem;
     }
 `
 
