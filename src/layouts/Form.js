@@ -51,12 +51,12 @@ const Form = () => {
       <form
         onSubmit={handleSubmit(onSubmit, onError)}
         method="POST"
-        action="/contact"
+        action={() => setSent(true)}
         data-netlify="true"
         data-netlify-honeypot="bot-field"
         name="contact"
       >
-        <input type="hidden" name="form-name" value="contact" />
+        {/* <input type="hidden" name="form-name" value="contact" /> */}
         <div>
           <label htmlFor="name">Name*</label>
           <input id="name" {...register("name", { required: true })} />
