@@ -27,7 +27,7 @@ const App = () => {
         <MainSection>
           <Hero />
           <About />
-          <FormTest />
+          <Form />
         </MainSection>
       </main>
       <footer>
