@@ -1,7 +1,5 @@
-import React, {useEffect} from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
-import { motion, useAnimation } from "framer-motion";
-import {useInView} from "react-intersection-observer";
 
 // components
 import { List } from "../layouts/Wrappers";
@@ -10,30 +8,8 @@ import Tag from "../components/Tag";
 const WorkCard = ({ state, title, dates, company, description, tags }) => {
   description = description.split(". ");
 
-  // animations
-  // const controls = useAnimation();
-  // const [ref, inView] = useInView();
-  // const fadeIn = {
-  //   visible: { opacity: 1, scale: 1, transition: { duration: 1 } },
-  //   hidden: { opacity: 0, scale: 0 }
-  // }
-
-  // useEffect(() => {
-  //   if (inView) {
-  //     controls.start("visible");
-  //   }
-  // }, [controls, inView]);
-
   return (
-    <StyledWorkCard 
-      
-      state={state}
-
-      // ref={ref}
-      // variants = {fadeIn}
-      // animate={controls}
-      // initial="hidden"
-    >
+    <StyledWorkCard state={state}>
       <h3>{title}</h3>
       <p>{dates}</p>
       <p>{company}</p>
@@ -51,7 +27,7 @@ const WorkCard = ({ state, title, dates, company, description, tags }) => {
 
 export default WorkCard;
 
-const StyledWorkCard = styled(motion.div)`
+const StyledWorkCard = styled.div`
   padding: 3rem 0;
   padding-left: 4rem;
 
@@ -85,7 +61,6 @@ const StyledWorkCard = styled(motion.div)`
       left: 6%;
     } */
 
-    
     @media (max-width: 1024px) {
       left: 22.7%;
     }
@@ -107,12 +82,10 @@ const StyledWorkCard = styled(motion.div)`
     @media (max-width: 280px) {
       left: 5.9%;
     }
+    @media only screen and (device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) {
+      left: 6.9%;
+    }
   }
-
-  /* p:first-child {
-        font-weight: bold;
-        padding-bottom: 1rem;
-    } */
 
   p:nth-child(2) {
     font-size: 12px;

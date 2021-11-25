@@ -216,6 +216,7 @@ const StyledSubmit = styled.button`
   transition: all 0.3s ease-in;
 
   @media (max-width: 768px) {
+    min-height: 48px;
     display: flex;
     justify-content: center;
     align-items: center;
