@@ -37,16 +37,9 @@ export const Div = styled(motion.div)`
   flex-direction: ${(props) => props.nav && "row"};
   justify-content: ${(props) => props.nav && "flex-end"};
   align-items: ${(props) => props.nav && "center"};
-<<<<<<< HEAD
-
-  @media ${({ theme }) => theme.bp.laptop} {
+  @media (max-width: 768px) {
     flex-direction: ${(props) => props.nav && "column"};
   }
-=======
-  @media (max-width: 768px) {
-      flex-direction: ${(props) => props.nav && "column"};
-    }
->>>>>>> parent of 81748b9... added bp to theme prop
 `;
 
 export const List = styled.ul`
@@ -73,21 +66,12 @@ export const ListContainer = styled.ul`
   display: flex;
   flex-direction: row;
 
-<<<<<<< HEAD
-  @media ${({ theme }) => theme.bp.laptop} {
+  @media (max-width: 768px) {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     margin-bottom: 1rem;
   }
-=======
-  @media (max-width: 768px) {
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: center;
-      margin-bottom: 1rem;
-    }
->>>>>>> parent of 81748b9... added bp to theme prop
 
   > li {
     margin-right: 4rem;

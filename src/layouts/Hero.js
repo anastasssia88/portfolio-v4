@@ -116,7 +116,7 @@ const HeroSection = styled(Container)`
       padding-top: 2rem;
     }
 
-    /* iPhone 12 Pro Max */
+    /* HERE */
     @media only screen and (device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) {
       padding-top: 2rem;
     }
