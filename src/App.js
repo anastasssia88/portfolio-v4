@@ -8,7 +8,6 @@ import Navbar from "./layouts/Navbar";
 import Hero from "./layouts/Hero";
 import About from "./layouts/About";
 import Form from "./layouts/Form";
-import FormTest from "./layouts/FormTest";
 import Footer from "./layouts/Footer";
 import { Section } from "./layouts/Wrappers";
 
@@ -19,7 +18,7 @@ import bgImageMobile from "./images/bg-mobile.png";
 const App = () => {
   const [theme, setTheme] = useState(lightTheme);
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={{ colors: theme, bp: bp }}>
       <header>
         <Navbar theme={theme} setTheme={setTheme} />
       </header>
@@ -50,7 +49,7 @@ const MainSection = styled(Section)`
   }
 
   h2 {
-    color: ${(props) => props.theme.accentMain};
+    color: ${(props) => props.theme.colors.accentMain};
     text-align: center;
   }
 `;

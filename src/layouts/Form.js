@@ -99,7 +99,7 @@ const FormContainer = styled(Container)`
   /* successful submit message */
   > p {
     text-align: center;
-    background: ${(props) => props.theme.accentGray};
+    background: ${({ theme }) => theme.colors.accentGray};
     padding: 1rem;
     border-radius: 20px;
     width: auto;
@@ -166,13 +166,13 @@ const FormContainer = styled(Container)`
     margin-bottom: 1rem;
     padding: 0.5rem 1rem;
     border: none;
-    border-bottom: 2px solid ${(props) => props.theme.textSec};
-    background: ${(props) => props.theme.bgMain};
+    border-bottom: 2px solid ${({ theme }) => theme.colors.textSec};
+    background: ${({ theme }) => theme.colors.bgMain};
     transition: all 0.3s ease;
 
     &:focus {
       outline: none;
-      border-bottom: 2px solid ${(props) => props.theme.accentSec};
+      border-bottom: 2px solid ${({ theme }) => theme.colors.accentSec};
     }
   }
 
@@ -183,8 +183,8 @@ const FormContainer = styled(Container)`
 
   input[type="submit"] {
     margin-top: 1rem;
-    background: ${(props) => props.theme.accentLav};
-    border: 2px solid ${(props) => props.theme.accentLav};
+    background: ${({ theme }) => theme.colors.accentLav};
+    border: 2px solid ${({ theme }) => theme.colors.accentLav};
   }
 
   label {
@@ -192,7 +192,7 @@ const FormContainer = styled(Container)`
     text-transform: uppercase;
     font-size: 12px;
     letter-spacing: 4px;
-    color: ${(props) => props.theme.textSec};
+    color: ${({ theme }) => theme.colors.textSec};
   }
 `;
 
@@ -202,7 +202,7 @@ const StyledSubmit = styled.button`
   margin: 1rem 0;
   width: 100%;
   max-height: 45%;
-  background: ${(props) => props.theme.accentSec};
+  background: ${({ theme }) => theme.colors.accentSec};
   border: none;
   border-radius: 20px;
   -webkit-box-shadow: 0px 1px 14px 4px rgba(194, 194, 194, 0.11);
@@ -233,6 +233,6 @@ const StyledSubmit = styled.button`
 
 const Error = styled.p`
   font-size: 12px;
-  color: ${(props) => props.theme.accentSec};
+  color: ${({ theme }) => theme.colors.accentSec};
   margin-left: 1rem;
 `;

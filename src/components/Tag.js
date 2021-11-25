@@ -15,7 +15,7 @@ const StyledTag = styled.li`
   min-width: 4rem;
   border-radius: 10px;
   background: lavender;
-  color: ${(props) => props.theme.mainSec};
+  color: ${({ theme }) => theme.colors.mainSec};
   text-align: center;
 
   background: ${(props) => props.color};

@@ -29,16 +29,15 @@ const Footer = () => {
 export default Footer;
 
 const StyledDiv = styled(Div)`
-  /* background: ${(props) => props.theme.bgMain}; */
+  /* background: ${(props) => props.theme.colors.bgMain}; */
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
 
-
   @media (max-width: 768px) {
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: center;
-    }
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
 `;

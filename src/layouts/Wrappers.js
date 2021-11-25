@@ -9,7 +9,7 @@ export const Section = styled.section`
   padding-right: 17%;
   padding-top: 6rem;
   padding-bottom: 6rem;
-  background: ${(props) => props.theme.bgMain};
+  background: ${({ theme }) => theme.colors.bgMain};
 
   @media (max-width: 768px) {
     padding-left: 10%;
@@ -23,7 +23,7 @@ export const Div = styled(motion.div)`
   padding-right: 17%;
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
-  background: ${(props) => props.theme.bgMain};
+  background: ${({ theme }) => theme.colors.bgMain};
 
   @media (max-width: 768px) {
     padding-left: 5%;
@@ -38,8 +38,8 @@ export const Div = styled(motion.div)`
   justify-content: ${(props) => props.nav && "flex-end"};
   align-items: ${(props) => props.nav && "center"};
   @media (max-width: 768px) {
-      flex-direction: ${(props) => props.nav && "column"};
-    }
+    flex-direction: ${(props) => props.nav && "column"};
+  }
 `;
 
 export const List = styled.ul`
@@ -67,11 +67,11 @@ export const ListContainer = styled.ul`
   flex-direction: row;
 
   @media (max-width: 768px) {
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: center;
-      margin-bottom: 1rem;
-    }
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
 
   > li {
     margin-right: 4rem;
@@ -84,11 +84,11 @@ export const ListContainer = styled.ul`
   }
 
   > li > a {
-    color: ${(props) => props.theme.textMain};
+    color: ${({ theme }) => theme.colors.textMain};
     transition: all 0.3s ease;
 
     &:hover {
-      color: ${(props) => props.theme.accentSec};
+      color: ${({ theme }) => theme.colors.accentSec};
     }
   }
 `;

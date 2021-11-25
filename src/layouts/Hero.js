@@ -71,14 +71,14 @@ const HeroSection = styled(Container)`
 
     p {
       font-size: 18px;
-      color: ${(props) => props.theme.textMain};
+      color: ${({ theme }) => theme.colors.textMain};
     }
 
     p:first-child {
       text-transform: uppercase;
       font-size: 12px;
       letter-spacing: 4px;
-      color: ${(props) => props.theme.textSec};
+      color: ${({ theme }) => theme.colors.textSec};
     }
 
     p:nth-child(4) {
@@ -87,7 +87,7 @@ const HeroSection = styled(Container)`
 
     h1,
     h3 {
-      color: ${(props) => props.theme.accentMain};
+      color: ${({ theme }) => theme.colors.accentMain};
     }
 
     h1 {

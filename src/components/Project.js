@@ -61,7 +61,7 @@ const Project = ({ name, title, type, description, tags, demoLink }) => {
 export default Project;
 
 const StyledProject = styled(motion.div)`
-  background: ${(props) => props.theme.bgMain};
+  background: ${(props) => props.theme.colors.bgMain};
   -webkit-box-shadow: 0px 1px 14px 4px rgba(194, 194, 194, 0.11);
   box-shadow: 0px 1px 14px 4px rgba(194, 194, 194, 0.11);
   border-radius: 10px;
@@ -91,7 +91,7 @@ const StyledProject = styled(motion.div)`
 
   a > div {
     padding: 1rem 2rem 2rem 2rem;
-    color: ${(props) => props.theme.textMain};
+    color: ${(props) => props.theme.colors.textMain};
 
     @media (max-width: 768px) {
       padding: 1rem;
@@ -108,10 +108,10 @@ const StyledProject = styled(motion.div)`
       letter-spacing: 4px;
       padding-top: 1rem;
       padding-bottom: 0.4rem;
-      color: ${(props) => props.theme.textSec};
+      color: ${({ theme }) => theme.colors.textSec};
     }
     h3 {
-      color: ${(props) => props.theme.accentMain};
+      color: ${({ theme }) => theme.colors.accentMain};
       font-size: 18px;
       font-weight: bold;
       text-align: center;

@@ -7,13 +7,25 @@ import { Github } from "@styled-icons/bootstrap/Github";
 const SocialBtns = () => {
   return (
     <StyledDiv>
-      <a href="https://twitter.com/linguanastya" target="_blank" rel="noreferrer">
+      <a
+        href="https://twitter.com/linguanastya"
+        target="_blank"
+        rel="noreferrer"
+      >
         <Twitter />
       </a>
-      <a href="https://github.com/anastasssia88" target="_blank" rel="noreferrer">
+      <a
+        href="https://github.com/anastasssia88"
+        target="_blank"
+        rel="noreferrer"
+      >
         <GitHub />
       </a>
-      <a href="https://www.linkedin.com/in/anastasia-titova/" target="_blank" rel="noreferrer">
+      <a
+        href="https://www.linkedin.com/in/anastasia-titova/"
+        target="_blank"
+        rel="noreferrer"
+      >
         <LinkedIn />
       </a>
     </StyledDiv>
@@ -33,7 +45,7 @@ const StyledDiv = styled.div`
 `;
 
 const Twitter = styled(TwitterWithCircle)`
-  color: ${(props) => props.theme.accentSec};
+  color: ${({ theme }) => theme.colors.accentSec};
   width: 32px;
   transition: all 0.3s ease-in;
 
@@ -44,7 +56,7 @@ const Twitter = styled(TwitterWithCircle)`
 `;
 
 const LinkedIn = styled(LinkedinWithCircle)`
-  color: ${(props) => props.theme.accentSec};
+  color: ${({ theme }) => theme.colors.accentSec};
   width: 32px;
   transition: all 0.3s ease-in;
 
@@ -55,7 +67,7 @@ const LinkedIn = styled(LinkedinWithCircle)`
 `;
 
 const GitHub = styled(Github)`
-  color: ${(props) => props.theme.accentSec};
+  color: ${({ theme }) => theme.colors.accentSec};
   width: 32px;
   cursor: pointer;
   transition: all 0.3s ease-in;

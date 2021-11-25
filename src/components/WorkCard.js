@@ -37,7 +37,7 @@ const StyledWorkCard = styled.div`
   }
 
   h3 {
-    color: ${(props) => props.theme.accentMain};
+    color: ${({ theme }) => theme.colors.accentMain};
     font-size: 18px;
     font-weight: bold;
     padding-bottom: 1rem;
@@ -53,9 +53,10 @@ const StyledWorkCard = styled.div`
     left: 22.9%;
     border: 4px solid;
 
-    background: ${(props) => props.theme.accentMain};
-    border-color: ${(props) => props.theme.accentMain};
-    background: ${(props) => props.state === "current" && props.theme.bgMain};
+    background: ${({ theme }) => theme.colors.accentMain};
+    border-color: ${({ theme }) => theme.colors.accentMain};
+    background: ${({ state, theme }) =>
+      state === "current" && theme.colors.bgMain};
 
     /* @media (max-width: 375px) {
       left: 6%;
