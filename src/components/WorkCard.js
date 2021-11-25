@@ -83,7 +83,7 @@ const StyledWorkCard = styled.div`
       left: 5.9%;
     }
     @media only screen and (device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) {
-      left: 6.9%;
+      left: 7.1%;
     }
   }
 
