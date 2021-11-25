@@ -40,7 +40,7 @@ const StyledCard = styled(motion.div)`
   height: auto;
   width: 30%;
   border-radius: 10px;
-  background: ${(props) => props.theme.colors.bgMain};
+  background: ${(props) => props.theme.bgMain};
   -webkit-box-shadow: 0px 1px 14px 4px rgba(194, 194, 194, 0.11);
   box-shadow: 0px 1px 14px 4px rgba(194, 194, 194, 0.11);
 

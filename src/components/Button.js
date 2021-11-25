@@ -12,7 +12,7 @@ const Button = ({ content }) => {
 export default Button;
 
 const StyledButton = styled.button`
-  background: ${(props) => props.theme.colors.accentSec};
+  background: ${(props) => props.theme.accentSec};
   border: none;
   padding: 0.5rem 1rem;
   border-radius: 20px;

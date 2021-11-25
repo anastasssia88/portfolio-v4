@@ -9,7 +9,7 @@ export const Section = styled.section`
   padding-right: 17%;
   padding-top: 6rem;
   padding-bottom: 6rem;
-  background: ${({ theme }) => theme.colors.bgMain};
+  background: ${(props) => props.theme.bgMain};
 
   @media ${({ theme }) => theme.bp.laptop} {
     padding-left: 10%;
@@ -23,7 +23,7 @@ export const Div = styled(motion.div)`
   padding-right: 17%;
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
-  background: ${({ theme }) => theme.colors.bgMain};
+  background: ${(props) => props.theme.bgMain};
 
   @media ${({ theme }) => theme.bp.laptop} {
     padding-left: 5%;
@@ -37,10 +37,16 @@ export const Div = styled(motion.div)`
   flex-direction: ${(props) => props.nav && "row"};
   justify-content: ${(props) => props.nav && "flex-end"};
   align-items: ${(props) => props.nav && "center"};
+<<<<<<< HEAD
 
   @media ${({ theme }) => theme.bp.laptop} {
     flex-direction: ${(props) => props.nav && "column"};
   }
+=======
+  @media (max-width: 768px) {
+      flex-direction: ${(props) => props.nav && "column"};
+    }
+>>>>>>> parent of 81748b9... added bp to theme prop
 `;
 
 export const List = styled.ul`
@@ -67,12 +73,21 @@ export const ListContainer = styled.ul`
   display: flex;
   flex-direction: row;
 
+<<<<<<< HEAD
   @media ${({ theme }) => theme.bp.laptop} {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     margin-bottom: 1rem;
   }
+=======
+  @media (max-width: 768px) {
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+>>>>>>> parent of 81748b9... added bp to theme prop
 
   > li {
     margin-right: 4rem;
@@ -85,11 +100,11 @@ export const ListContainer = styled.ul`
   }
 
   > li > a {
-    color: ${({ theme }) => theme.colors.textMain};
+    color: ${(props) => props.theme.textMain};
     transition: all 0.3s ease;
 
     &:hover {
-      color: ${({ theme }) => theme.colors.accentSec};
+      color: ${(props) => props.theme.accentSec};
     }
   }
 `;

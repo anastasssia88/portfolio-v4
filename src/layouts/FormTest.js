@@ -1,7 +1,12 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import {
+  useNetlifyForm,
+  NetlifyFormProvider,
+  NetlifyFormComponent,
+  Honeypot,
+} from "react-netlify-forms";
 import { useForm } from "react-hook-form";
-
 // components
 import { Container } from "./Wrappers";
 
@@ -14,77 +19,89 @@ const Form = () => {
   } = useForm();
   const [sent, setSent] = useState(false);
 
-  const encode = (data) => {
-    return Object.keys(data)
-      .map(
-        (key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
-      )
-      .join("&");
+  const netlify = useNetlifyForm({
+    name: "contact-form",
+    honeypotName: "bot-field",
+    onSuccess: (response, context) => {
+      console.log("Successfully sent form data to Netlify Server");
+    },
+  });
+
+  const onSubmit = (data) => {
+    console.log("Submitting the data ....");
+    netlify.handleSubmit(null, data);
+    reset();
+    setSent(true);
   };
 
-  const onError = (errors, e) => console.log(errors, e);
-  const onSubmit = (data, e) => {
-    console.log("--> DATA: " + data);
-    e.preventDefault();
-    console.log("Sending request with form data ...");
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({
-        "form-name": "contact",
-        ...data,
-      }),
-    })
-      .then((response) => {
-        reset();
-        setSent(true);
-        console.log(response);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
+  const EMAIL_REGEX =
+    /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/i;
 
   return (
     <FormContainer id="contact">
       <h2>Let's talk</h2>
-      <form
-        onSubmit={handleSubmit(onSubmit, onError)}
-        method="POST"
-        action={() => setSent(true)}
-        data-netlify="true"
-        data-netlify-honeypot="bot-field"
-        name="contact"
-      >
-        <input type="hidden" name="form-name" value="contact" />
-        <div>
-          <label htmlFor="name">Name*</label>
-          <input id="name" {...register("name", { required: true })} />
-          {errors.name && <Error>It shouldn't be empty</Error>}
-        </div>
+      <NetlifyFormProvider {...netlify}>
+        <NetlifyFormComponent onSubmit={handleSubmit(onSubmit)}>
+          <Honeypot />
+          {netlify.success && (
+            <p sx={{ variant: "alerts.success", p: 3 }}>
+              Thanks for contacting us!
+            </p>
+          )}
+          {netlify.error && (
+            <p sx={{ variant: "alerts.muted", p: 3 }}>
+              Sorry, we could not reach servers. Because it only works on
+              Netlify, our GitHub demo does not provide a response.
+            </p>
+          )}
+          <div>
+            <label htmlFor="name" sx={{ variant: "forms.label" }}>
+              Name*
+            </label>
+            <input
+              name="name"
+              id="name"
+              {...register("name", {
+                required: "Name is required",
+              })}
+              sx={{
+                variant: "forms.input",
+              }}
+            />
+            {errors.name && <Error>It shouldn't be empty</Error>}
+          </div>
 
-        <div>
-          <label htmlFor="email">Email*</label>
-          <input
-            id="email"
-            {...register("email", {
-              required: "It shouldn't be empty",
-              pattern: {
-                value:
-                  /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/i,
-                message: "Oops! Incorrect email",
-              },
-            })}
-          />
-          {errors.email && <Error>{errors.email.message}</Error>}
-        </div>
+          <div>
+            <label htmlFor="email" sx={{ variant: "forms.label" }}>
+              Email*
+            </label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              {...register("email", {
+                required: "Email is required",
+                pattern: {
+                  value: EMAIL_REGEX,
+                  message: "Oops! Invalid email address",
+                },
+              })}
+              sx={{
+                variant: "forms.input",
+              }}
+            />
+            {errors.email && <Error>{errors.email.message}</Error>}
+          </div>
 
-        <div>
-          <label htmlFor="message">Message</label>
-          <textarea id="message" {...register("message")} />
-        </div>
-        <StyledSubmit type="submit">Submit</StyledSubmit>
-      </form>
+          {/* <div>
+            <label htmlFor="message" sx={{ variant: 'forms.label' }}>Message</label>
+            <textarea id="message" {...register("message")} />
+            </div> */}
+          <StyledSubmit type="submit" sx={{ variant: "buttons.success" }}>
+            Submit
+          </StyledSubmit>
+        </NetlifyFormComponent>
+      </NetlifyFormProvider>
       {sent && <p>Thanks! 🙌🏼 Talk to you soon</p>}
     </FormContainer>
   );
@@ -115,7 +132,7 @@ const FormContainer = styled(Container)`
     gap: 0.5rem 2rem;
     grid-auto-rows: minmax(auto, auto);
 
-    div:nth-child(2) {
+    div:first-child {
       grid-column: 1 / 3;
       grid-row: 1;
       @media (max-width: 768px) {
@@ -123,7 +140,7 @@ const FormContainer = styled(Container)`
         grid-row: 1;
       }
     }
-    div:nth-child(3) {
+    div:nth-child(2) {
       grid-column: 3 / 5;
       grid-row: 1;
       @media (max-width: 768px) {
@@ -131,7 +148,7 @@ const FormContainer = styled(Container)`
         grid-row: 2;
       }
     }
-    div:nth-child(4) {
+    div:nth-child(3) {
       grid-column: 1 / 4;
       grid-row: 2;
       @media (max-width: 768px) {
@@ -216,7 +233,6 @@ const StyledSubmit = styled.button`
   transition: all 0.3s ease-in;
 
   @media (max-width: 768px) {
-    min-height: 48px;
     display: flex;
     justify-content: center;
     align-items: center;

@@ -75,7 +75,9 @@ const About = () => {
   return (
     <>
       <StyledContainer skills id="skills">
-        <h2>Skills & Toolset</h2>
+        <h2>
+          Skills & Toolset
+        </h2>
         <div>
           <Card
             type="Languages"
@@ -133,9 +135,9 @@ const StyledContainer = styled(Container)`
   max-width: 100%;
 
   @media (max-width: 768px) {
-    padding-bottom: 0;
-  }
-
+      padding-bottom: 0;
+    }
+  
   > div {
     display: flex;
     justify-content: space-between;
@@ -152,8 +154,7 @@ const StyledContainer = styled(Container)`
     margin: ${(props) => props.experience && "3rem 10%"};
     flex-direction: ${(props) => props.experience && "column"};
     border-left: ${(props) => props.experience && "4px solid"};
-    border-color: ${(props) =>
-      props.experience && props.theme.colors.accentMain};
+    border-color: ${(props) => props.experience && props.theme.accentMain};
     @media (max-width: 768px) {
       margin: ${(props) => props.experience && "3rem 0%"};
     }
