@@ -35,7 +35,8 @@ export default Navbar;
 const StyledNav = styled.nav`
   min-height: 3rem;
   background: ${({ theme }) => theme.colors.bgMain};
-  @media (max-width: 768px) {
+
+  @media ${({ theme }) => theme.bp.laptop} {
     min-height: 3.5rem;
     padding: 1rem 5%;
     display: flex;
@@ -47,7 +48,7 @@ const StyledNav = styled.nav`
 
 const StyledDiv = styled(Div)`
   transition: all 0.6s ease-out;
-  @media (max-width: 768px) {
+  @media ${({ theme }) => theme.bp.laptop} {
     /* display: ${(props) => (props.open === true ? "flex" : "none")}; */
     margin-top: ${(props) => (props.open === true ? "0px" : "-30rem")};
   }

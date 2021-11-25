@@ -11,7 +11,7 @@ export const Section = styled.section`
   padding-bottom: 6rem;
   background: ${({ theme }) => theme.colors.bgMain};
 
-  @media (max-width: 768px) {
+  @media ${({ theme }) => theme.bp.laptop} {
     padding-left: 10%;
     padding-right: 10%;
   }
@@ -25,7 +25,7 @@ export const Div = styled(motion.div)`
   padding-bottom: 1.5rem;
   background: ${({ theme }) => theme.colors.bgMain};
 
-  @media (max-width: 768px) {
+  @media ${({ theme }) => theme.bp.laptop} {
     padding-left: 5%;
     padding-right: 5%;
   }
@@ -37,7 +37,8 @@ export const Div = styled(motion.div)`
   flex-direction: ${(props) => props.nav && "row"};
   justify-content: ${(props) => props.nav && "flex-end"};
   align-items: ${(props) => props.nav && "center"};
-  @media (max-width: 768px) {
+
+  @media ${({ theme }) => theme.bp.laptop} {
     flex-direction: ${(props) => props.nav && "column"};
   }
 `;
@@ -66,7 +67,7 @@ export const ListContainer = styled.ul`
   display: flex;
   flex-direction: row;
 
-  @media (max-width: 768px) {
+  @media ${({ theme }) => theme.bp.laptop} {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
@@ -77,7 +78,7 @@ export const ListContainer = styled.ul`
     margin-right: 4rem;
     cursor: pointer;
 
-    @media (max-width: 768px) {
+    @media ${({ theme }) => theme.bp.laptop} {
       margin-right: 0;
       margin-top: 1rem;
     }
