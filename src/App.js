@@ -11,10 +11,6 @@ import Form from "./layouts/Form";
 import Footer from "./layouts/Footer";
 import { Section } from "./layouts/Wrappers";
 
-// images
-// import bgImage from "./images/bg-light.png";
-// import bgImageMobile from "./images/bg-mobile.png";
-
 const App = () => {
   const [theme, setTheme] = useState(lightTheme);
   return (

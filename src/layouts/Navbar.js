@@ -32,7 +32,7 @@ const Navbar = () => {
 
 export default Navbar;
 
-export const StyledNav = styled.nav`
+const StyledNav = styled.nav`
   min-height: 3rem;
   background: ${(props) => props.theme.bgMain};
   @media (max-width: 768px) {

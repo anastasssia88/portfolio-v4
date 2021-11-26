@@ -95,6 +95,9 @@ export default Form;
 const FormContainer = styled(Container)`
   padding: 3rem 0;
   width: 100%;
+  @media (max-width: 768px) {
+    padding: 3rem 0 0 0;
+  }
 
   /* successful submit message */
   > p {

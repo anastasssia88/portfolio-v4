@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 
 import { HeroSection } from "./Hero";
 import { Skills, Experience, Projects } from "./About";
-import { StyledNav } from "./Navbar";
 
 import bgImage from "../images/bg-light.png";
 import bgImageMobile from "../images/bg-mobile.png";
