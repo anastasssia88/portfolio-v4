@@ -27,8 +27,6 @@ const StyledButton = styled.button`
   transition: all 0.3s ease-in;
 
   &:hover {
-    /* color: black;
-        background: ${(props) => props.theme.accentBlue}; */
     transform: scale(106%, 106%);
   }
 `;
