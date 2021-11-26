@@ -12,7 +12,7 @@ const Navbar = () => {
   return (
     <StyledNav>
       <Hamburger open={open} setOpen={setOpen} />
-      <StyledDiv open={open} flex nav>
+      <StyledDiv open={open}>
         <ListContainer open={open}>
           <li>
             <a href="#skills">Skills</a>
@@ -32,7 +32,7 @@ const Navbar = () => {
 
 export default Navbar;
 
-const StyledNav = styled.nav`
+export const StyledNav = styled.nav`
   min-height: 3rem;
   background: ${(props) => props.theme.bgMain};
   @media (max-width: 768px) {
@@ -46,9 +46,13 @@ const StyledNav = styled.nav`
 `;
 
 const StyledDiv = styled(Div)`
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
   transition: all 0.6s ease-out;
   @media (max-width: 768px) {
-    /* display: ${(props) => (props.open === true ? "flex" : "none")}; */
+    flex-direction: column;
     margin-top: ${(props) => (props.open === true ? "0px" : "-30rem")};
   }
 `;

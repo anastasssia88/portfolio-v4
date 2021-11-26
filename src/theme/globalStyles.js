@@ -128,6 +128,43 @@ table {
 html {
     min-height: 100vh;
     scroll-behavior: smooth;
+    --padding-y-sm: 17%;
+    --padding-y-md: 17%;
+    --before-left: 22.9%;
+
+    @media (max-width: 1024px) {
+      --before-left: 22.7%;
+    }
+    @media (max-width: 768px) {
+      --padding-y-sm: 5%;
+      --padding-y-md: 10%;
+      --before-left: 8.7%;
+    }
+    @media (max-width: 540px) {
+      --before-left: 8%;
+    }
+    @media (max-width: 425px) {
+      --before-left: 7.4%;
+    }
+    @media (max-width: 375px) {
+      --before-left: 7.1%;
+    }
+    @media (max-width: 320px) {
+      --before-left: 7%;
+    }
+    @media (max-width: 280px) {
+      --before-left: 5.9%;
+    }
+
+    @media only screen and (device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) {
+      --before-left: 7.1%;
+    }
+    @media (min-width: 1740px) {
+      --padding-y-sm: 25%;
+      --padding-y-md: 25%;
+      --before-left: 29.5%;
+    }
+
 }
 html, body {
     max-width: 100%;

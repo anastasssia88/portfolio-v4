@@ -1,13 +1,31 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 
-// components
+// import Container from "./wrappers/Container";
 import { Container } from "./Wrappers";
 import Card from "../components/Card";
 import WorkCard from "../components/WorkCard";
 import Project from "../components/Project";
 
 const About = () => {
+  const [tools, setTools] = useState([
+    {
+      id: 1,
+      type: "Languages",
+      content: "Javascript, Python, HTML5, CSS3, SQL",
+    },
+    {
+      id: 2,
+      type: "Tools",
+      content: "React.js, Next.js, Flask, Django, Postgres, MongoDB, Git",
+    },
+    {
+      id: 3,
+      type: "Other",
+      content: "Text-to-speech, Voice Building, Machine learning",
+    },
+  ]);
+
   const [experience, setExperience] = useState([
     {
       id: 11,
@@ -74,93 +92,89 @@ const About = () => {
   ]);
   return (
     <>
-      <StyledContainer skills id="skills">
-        <h2>
-          Skills & Toolset
-        </h2>
-        <div>
-          <Card
-            type="Languages"
-            content="Javascript, Python, HTML5, CSS3, SQL"
-          />
-          <Card
-            type="Tools"
-            content="React.js, Next.js, Flask, Django, Postgres, MongoDB, Git"
-          />
-          <Card
-            type="Other"
-            content="Text-to-speech, Voice Building, Machine learning"
-          />
-        </div>
-      </StyledContainer>
-      <StyledContainer experience id="work-experience">
-        <h2>Work Experience</h2>
-        <div>
-          {experience.map((i) => (
-            <WorkCard
-              key={i.id}
-              state={i.state}
-              title={i.title}
-              dates={i.dates}
-              company={i.company}
-              description={i.description}
-              tags={i.tags}
-            />
-          ))}
-        </div>
-      </StyledContainer>
-      <StyledContainer projects id="projects">
-        <h2>Coding Projects</h2>
-        <div>
-          {projects.map((i) => (
-            <Project
-              key={i.id}
-              name={i.name}
-              title={i.title}
-              type={i.type}
-              description={i.description}
-              tags={i.tags}
-              demoLink={i.demoLink}
-            />
-          ))}
-        </div>
-      </StyledContainer>
+      <Skills id="skills">
+        <Container>
+          <h2>Skills & Toolset</h2>
+          <CardContainer>
+            {tools.map((i) => (
+              <Card key={i.id} type={i.type} content={i.content} />
+            ))}
+          </CardContainer>
+        </Container>
+      </Skills>
+
+      <Experience id="work-experience">
+        <Container>
+          <h2>Work Experience</h2>
+          <CardContainer>
+            {experience.map((i) => (
+              <WorkCard
+                key={i.id}
+                state={i.state}
+                title={i.title}
+                dates={i.dates}
+                company={i.company}
+                description={i.description}
+                tags={i.tags}
+              />
+            ))}
+          </CardContainer>
+        </Container>
+      </Experience>
+
+      <Projects id="projects">
+        <Container>
+          <h2>Coding Projects</h2>
+          <CardContainer>
+            {projects.map((i) => (
+              <Project
+                key={i.id}
+                name={i.name}
+                title={i.title}
+                type={i.type}
+                description={i.description}
+                tags={i.tags}
+                demoLink={i.demoLink}
+              />
+            ))}
+          </CardContainer>
+        </Container>
+      </Projects>
     </>
   );
 };
 
 export default About;
 
-const StyledContainer = styled(Container)`
-  max-width: 100%;
+export const Skills = styled.div``;
+export const Experience = styled.div``;
+export const Projects = styled.div``;
+
+const CardContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: space-between;
 
   @media (max-width: 768px) {
-      padding-bottom: 0;
-    }
-  
-  > div {
-    display: flex;
-    justify-content: space-between;
-    align-items: space-between;
+    flex-direction: column;
+  }
 
+  ${Skills} & {
+    padding: 3rem 0;
+  }
+
+  ${Experience} & {
+    margin: 3rem 10%;
+    flex-direction: column;
+    border-left: 4px solid;
+    border-color: ${(props) => props.theme.accentMain};
     @media (max-width: 768px) {
-      flex-direction: column;
+      margin: 3rem 0%;
     }
+  }
 
-    /* skills */
-    padding: ${(props) => props.skills && "3rem 0"};
-
-    /* experience */
-    margin: ${(props) => props.experience && "3rem 10%"};
-    flex-direction: ${(props) => props.experience && "column"};
-    border-left: ${(props) => props.experience && "4px solid"};
-    border-color: ${(props) => props.experience && props.theme.accentMain};
-    @media (max-width: 768px) {
-      margin: ${(props) => props.experience && "3rem 0%"};
-    }
-
-    /* projects */
-    padding: ${(props) => props.projects && "3rem 0"};
-    width: ${(props) => props.projects && "100%"};
+  ${Projects} & {
+    padding: 3rem 0;
+    width: 100%;
   }
 `;

@@ -6,7 +6,7 @@ import SocialBtn from "../components/SocialBtns";
 
 const Footer = () => {
   return (
-    <StyledDiv>
+    <Div>
       <div>
         <SocialBtn />
       </div>
@@ -22,23 +22,8 @@ const Footer = () => {
           <a href="#projects">Projects</a>
         </li>
       </ListContainer>
-    </StyledDiv>
+    </Div>
   );
 };
 
 export default Footer;
-
-const StyledDiv = styled(Div)`
-  /* background: ${(props) => props.theme.bgMain}; */
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-
-
-  @media (max-width: 768px) {
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: center;
-    }
-`;

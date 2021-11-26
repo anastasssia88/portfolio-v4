@@ -8,13 +8,12 @@ import Navbar from "./layouts/Navbar";
 import Hero from "./layouts/Hero";
 import About from "./layouts/About";
 import Form from "./layouts/Form";
-import FormTest from "./layouts/FormTest";
 import Footer from "./layouts/Footer";
 import { Section } from "./layouts/Wrappers";
 
 // images
-import bgImage from "./images/bg-light.png";
-import bgImageMobile from "./images/bg-mobile.png";
+// import bgImage from "./images/bg-light.png";
+// import bgImageMobile from "./images/bg-mobile.png";
 
 const App = () => {
   const [theme, setTheme] = useState(lightTheme);
@@ -24,11 +23,11 @@ const App = () => {
         <Navbar theme={theme} setTheme={setTheme} />
       </header>
       <main>
-        <MainSection>
+        <Section>
           <Hero />
           <About />
           <Form />
-        </MainSection>
+        </Section>
       </main>
       <footer>
         <Footer />
@@ -39,18 +38,18 @@ const App = () => {
 
 export default App;
 
-const MainSection = styled(Section)`
-  background-image: url(${bgImage});
-  background-repeat: no-repeat;
-  background-size: contain;
-  max-width: 100vw;
+// const MainSection = styled(Section)`
+//   background-image: url(${bgImage});
+//   background-repeat: no-repeat;
+//   background-size: contain;
+//   max-width: 100vw;
 
-  @media (max-width: 768px) {
-    background-image: url(${bgImageMobile});
-  }
+//   @media (max-width: 768px) {
+//     background-image: url(${bgImageMobile});
+//   }
 
-  h2 {
-    color: ${(props) => props.theme.accentMain};
-    text-align: center;
-  }
-`;
+//   h2 {
+//     color: ${(props) => props.theme.accentMain};
+//     text-align: center;
+//   }
+// `;
