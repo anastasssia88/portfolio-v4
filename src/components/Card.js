@@ -76,21 +76,21 @@ const StyledCard = styled(motion.div)`
   }
 `;
 
-const Languages = styled(CodeSlash)`
+export const Languages = styled(CodeSlash)`
   width: 32px;
   height: 32px;
   background: #eae2f9;
   padding: 4px;
   border-radius: 20px;
 `;
-const Tools = styled(ReactLogo)`
+export const Tools = styled(ReactLogo)`
   width: 32px;
   height: 32px;
   background: #eae2f9;
   padding: 4px;
   border-radius: 20px;
 `;
-const Voice = styled(Voiceprint)`
+export const Voice = styled(Voiceprint)`
   width: 32px;
   height: 32px;
   background: #eae2f9;

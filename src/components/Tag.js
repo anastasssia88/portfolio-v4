@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const Tag = ({ content, color }) => {
-  return <StyledTag color={color}>{content}</StyledTag>;
+  return <StyledTag>{content}</StyledTag>;
 };
 
 export default Tag;
