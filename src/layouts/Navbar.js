@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import PropTypes from "prop-types";
 
 // components
 import { Div, ListContainer } from "./Wrappers";
@@ -30,8 +31,6 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
-
 const StyledNav = styled.nav`
   min-height: 3rem;
   background: ${(props) => props.theme.bgMain};
@@ -56,3 +55,9 @@ const StyledDiv = styled(Div)`
     margin-top: ${(props) => (props.open === true ? "0px" : "-30rem")};
   }
 `;
+
+Navbar.propTypes = {
+  open: PropTypes.bool,
+};
+
+export default Navbar;

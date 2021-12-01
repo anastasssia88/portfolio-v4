@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import PropTypes from "prop-types";
 
 // import Container from "./wrappers/Container";
 import { Container } from "./Wrappers";
@@ -144,8 +145,6 @@ const About = () => {
   );
 };
 
-export default About;
-
 export const Skills = styled.div``;
 export const Experience = styled.div``;
 export const Projects = styled.div``;
@@ -178,3 +177,11 @@ const CardContainer = styled.div`
     width: 100%;
   }
 `;
+
+About.propTypes = {
+  tools: PropTypes.array,
+  experience: PropTypes.array,
+  projects: PropTypes.array,
+};
+
+export default About;

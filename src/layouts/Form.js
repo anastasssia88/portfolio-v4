@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { useForm } from "react-hook-form";
+import PropTypes from "prop-types";
 
 // components
 import { Container } from "./Wrappers";
@@ -89,8 +90,6 @@ const Form = () => {
     </FormContainer>
   );
 };
-
-export default Form;
 
 const FormContainer = styled(Container)`
   padding: 3rem 0;
@@ -239,3 +238,9 @@ const Error = styled.p`
   color: ${(props) => props.theme.accentSec};
   margin-left: 1rem;
 `;
+
+Form.propTypes = {
+  sent: PropTypes.bool,
+};
+
+export default Form;
