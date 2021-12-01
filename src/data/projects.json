@@ -1,0 +1,27 @@
+[
+    {
+      "id": 111,
+      "name": "petspaw",
+      "title": "PetsPaw",
+      "type": "Web app",
+      "description": "Individual project. Built a React web application based on The Dogs API.",
+      "tags": [
+        "React.js",
+        "Styled Components",
+        "API"
+      ],
+      "demoLink": "https://petspaw-by-anastasia-titova.netlify.app/"
+    },
+    {
+      "id": 122,
+      "name": "oxana",
+      "title": "Oxana's Cakes",
+      "type": "Website",
+      "description": "Website for a local small business - bakery in Los Angeles.",
+      "tags": [
+        "JavaScript",
+        "HTML/CSS"
+      ],
+      "demoLink": "https://oxanascakes.netlify.app/"
+    }
+  ]
