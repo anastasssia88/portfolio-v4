@@ -2,16 +2,16 @@
     {
       "id": 1,
       "type": "Languages",
-      "content": "Javascript, Python, HTML5, CSS3, SQL"
+      "content": "HTML5, CSS, Javascript, Typescript, Python, SQL"
     },
     {
       "id": 2,
       "type": "Tools",
-      "content": "React.js, Next.js, Flask, Django, Postgres, MongoDB, Git"
+      "content": "React.js, Next.js, Flask, Django, Postgres, Git"
     },
     {
       "id": 3,
       "type": "Other",
-      "content": "Text-to-speech, Voice Building, Machine learning"
+      "content": "Computer Science Fundamentals, Text-to-speech, Voice Building"
     }
   ]

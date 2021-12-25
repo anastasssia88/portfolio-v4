@@ -25,9 +25,7 @@ const Form = () => {
 
   const onError = (errors, e) => console.log(errors, e);
   const onSubmit = (data, e) => {
-    console.log("--> DATA: " + data);
     e.preventDefault();
-    console.log("Sending request with form data ...");
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
