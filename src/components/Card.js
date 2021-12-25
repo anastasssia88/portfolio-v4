@@ -36,7 +36,6 @@ const Card = ({ type, content }) => {
 export default Card;
 
 const StyledCard = styled(motion.div)`
-  background: pink;
   height: auto;
   width: 30%;
   border-radius: 10px;
@@ -48,7 +47,7 @@ const StyledCard = styled(motion.div)`
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  padding: 2rem;
+  padding: 2rem 1.5rem;
 
   @media (max-width: 768px) {
     width: 100%;

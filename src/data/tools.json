@@ -2,12 +2,12 @@
     {
       "id": 1,
       "type": "Languages",
-      "content": "HTML5, CSS, Javascript, Typescript, Python, SQL"
+      "content": "HTML5, CSS (SCSS/Sass), Javascript, Typescript, Python, SQL"
     },
     {
       "id": 2,
       "type": "Tools",
-      "content": "React.js, Next.js, Flask, Django, Postgres, Git"
+      "content": "React.js, Next.js, Flask, Django, Postgres, Git & Github"
     },
     {
       "id": 3,
