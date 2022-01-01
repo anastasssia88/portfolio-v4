@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import styled from "styled-components";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import { device } from "../theme/device";
 
 // components
 import { CodeSlash } from "@styled-icons/bootstrap/CodeSlash";
@@ -49,18 +50,18 @@ const StyledCard = styled(motion.div)`
   align-items: center;
   padding: 2rem 1.5rem;
 
-  @media (max-width: 768px) {
+  @media ${device.tabPort} {
     width: 100%;
   }
 
   &:first-child {
-    @media (max-width: 768px) {
+    @media ${device.tabPort} {
       margin-bottom: 1.5rem;
     }
   }
 
   &:nth-child(2) {
-    @media (max-width: 768px) {
+    @media ${device.tabPort} {
       margin-bottom: 1.5rem;
     }
   }

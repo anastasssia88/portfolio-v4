@@ -80,7 +80,7 @@ const CardContainer = styled.div`
   justify-content: space-between;
   align-items: space-between;
 
-  @media ${device.tabLand} {
+  @media ${device.tabPort} {
     flex-direction: column;
   }
 

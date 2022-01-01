@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { device } from "../theme/device";
 
 const Hamburger = ({ open, setOpen }) => {
   const handleClick = () => {
@@ -50,7 +51,7 @@ const Icon = styled.span`
 const StyledButton = styled.button`
   height: 2rem;
   display: none;
-  @media (max-width: 768px) {
+  @media ${device.tabPort} {
     display: flex;
     border: none;
     background: ${(props) => props.theme.bgMain};

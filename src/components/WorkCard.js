@@ -1,5 +1,6 @@
-import React, { useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
+import { device } from "../theme/device";
 
 // components
 import { List } from "../layouts/Wrappers";
@@ -31,7 +32,7 @@ const StyledWorkCard = styled.div`
   padding: 3rem 0;
   padding-left: 4rem;
 
-  @media (max-width: 768px) {
+  @media ${device.tabPort} {
     padding: 2rem 0;
     padding-left: 2rem;
   }

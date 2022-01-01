@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
+import { device } from "../theme/device";
 
 // components
 import { Div, ListContainer } from "./Wrappers";
@@ -40,7 +41,7 @@ const StyledNav = styled.nav`
   li:last-child {
     padding-bottom: 1rem;
   }
-  @media (max-width: 768px) {
+  @media ${device.tabPort} {
     min-height: 3.5rem;
     padding: 1rem 5%;
     display: flex;
@@ -56,7 +57,7 @@ const StyledDiv = styled(Div)`
   justify-content: flex-end;
   align-items: center;
   transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  @media (max-width: 768px) {
+  @media ${device.tabPort} {
     flex-direction: column;
     margin-top: ${(props) => (props.open === true ? "0px" : "-30rem")};
   }

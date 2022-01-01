@@ -132,6 +132,10 @@ html {
     --padding-y-md: 17%;
     --before-left: 22.9%;
 
+    @media (max-width: 1200px) {
+      --before-left: 9.1%;
+    }
+
     @media (max-width: 1024px) {
       --before-left: 22.7%;
     }

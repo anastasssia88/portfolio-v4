@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
+import { device } from "../theme/device";
 
 import { HeroSection } from "./Hero";
 import { Skills, Experience, Projects } from "./About";
@@ -15,7 +16,7 @@ export const Section = styled.section`
   padding-bottom: 6rem;
   background: ${(props) => props.theme.bgMain};
 
-  @media (max-width: 768px) {
+  @media ${device.tabLand} {
     padding-left: 10%;
     padding-right: 10%;
   }
@@ -27,7 +28,7 @@ export const Section = styled.section`
     background-size: contain;
     max-width: 100vw;
 
-    @media (max-width: 768px) {
+    @media ${device.tabPort} {
       background-image: url(${bgImageMobile});
     }
 
@@ -50,11 +51,11 @@ export const Container = styled.div`
     display: flex;
     flex-direction: row;
 
-    @media only screen and (device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) {
+    @media ${device.iPhoneProMax} {
       padding: 0rem 0 2rem 0;
     }
 
-    @media (max-width: 768px) {
+    @media ${device.tabPort} {
       padding: 0rem 0 6rem 0;
       flex-direction: column;
     }
@@ -63,7 +64,7 @@ export const Container = styled.div`
   ${Skills} &, ${Experience} &, ${Projects} & {
     max-width: 100%;
 
-    @media (max-width: 768px) {
+    @media ${device.tabPort} {
       padding-bottom: 0;
     }
   }
@@ -83,7 +84,7 @@ export const Div = styled(motion.div)`
     justify-content: space-between;
     align-items: center;
 
-    @media (max-width: 768px) {
+    @media ${device.tabPort} {
       flex-direction: column;
       justify-content: flex-start;
       align-items: center;
@@ -96,7 +97,7 @@ export const Div = styled(motion.div)`
     justify-content: flex-end;
     align-items: center;
     transition: all 0.6s ease-out;
-    @media (max-width: 768px) {
+    @media ${device.tabPort} {
       flex-direction: column;
       margin-top: ${(props) => (props.open === true ? "0px" : "-30rem")};
     }
@@ -117,7 +118,7 @@ export const ListContainer = styled.ul`
   display: flex;
   flex-direction: row;
 
-  @media (max-width: 768px) {
+  @media ${device.tabPort} {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
@@ -128,7 +129,7 @@ export const ListContainer = styled.ul`
     margin-right: 4rem;
     cursor: pointer;
 
-    @media (max-width: 768px) {
+    @media ${device.tabPort} {
       margin-right: 0;
       margin-top: 1rem;
     }

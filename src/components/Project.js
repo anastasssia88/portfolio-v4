@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
+import { device } from "../theme/device";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
@@ -69,7 +70,7 @@ const StyledProject = styled(motion.div)`
   cursor: pointer;
   transition: all 0.3s ease-out;
 
-  @media (max-width: 768px) {
+  @media ${device.tabPort} {
     width: 100%;
     margin-top: 1rem;
   }
@@ -93,7 +94,7 @@ const StyledProject = styled(motion.div)`
     padding: 1rem 2rem 2rem 2rem;
     color: ${(props) => props.theme.textMain};
 
-    @media (max-width: 768px) {
+    @media ${device.tabPort} {
       padding: 1rem;
     }
 
