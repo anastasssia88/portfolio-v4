@@ -80,7 +80,7 @@ const CardContainer = styled.div`
   justify-content: space-between;
   align-items: space-between;
 
-  @media ${device.tabPort} {
+  @media ${device.tabLand} {
     flex-direction: column;
   }
 
@@ -94,7 +94,7 @@ const CardContainer = styled.div`
     border-left: 4px solid;
     border-color: ${(props) => props.theme.accentMain};
 
-    @media ${device.tabPort} {
+    @media ${device.tabLand} {
       margin: 3rem 0%;
     }
   }
