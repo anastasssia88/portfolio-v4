@@ -1,7 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { MenuOutline } from "@styled-icons/evaicons-outline/MenuOutline";
-import { Close } from "@styled-icons/evaicons-solid/Close";
 
 const Hamburger = ({ open, setOpen }) => {
   const handleClick = () => {
@@ -9,19 +7,48 @@ const Hamburger = ({ open, setOpen }) => {
   };
 
   return (
-    <StyledButton>
-      {open === true ? (
-        <CloseImg onClick={() => handleClick()} />
-      ) : (
-        <Menu onClick={() => handleClick()} />
-      )}
+    <StyledButton onClick={() => handleClick()}>
+      <Icon open={open} />
     </StyledButton>
   );
 };
 
 export default Hamburger;
 
+const Icon = styled.span`
+  position: relative;
+  margin-top: 1rem;
+  &,
+  &::before,
+  &::after {
+    background-color: #777;
+    width: 2rem;
+    height: 2px;
+    border-radius: 2px;
+    display: inline-block;
+  }
+  & {
+    background-color: ${(props) => props.open === true && "transparent"};
+  }
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    transition: all 0.3s ease;
+  }
+  &::before {
+    top: ${(props) => (props.open === true ? "0" : "-0.5rem")};
+    transform: ${(props) => props.open === true && "rotate(135deg)"};
+  }
+  &::after {
+    top: ${(props) => (props.open === true ? "0" : "0.5rem")};
+    transform: ${(props) => props.open === true && "rotate(-135deg)"};
+  }
+`;
+
 const StyledButton = styled.button`
+  height: 2rem;
   display: none;
   @media (max-width: 768px) {
     display: flex;
@@ -32,14 +59,4 @@ const StyledButton = styled.button`
     position: absolute;
     top: 0.5rem;
   }
-`;
-
-const Menu = styled(MenuOutline)`
-  width: 2.5rem;
-  color: ${(props) => props.theme.textSec};
-`;
-
-const CloseImg = styled(Close)`
-  width: 2.5rem;
-  color: ${(props) => props.theme.textSec};
 `;
