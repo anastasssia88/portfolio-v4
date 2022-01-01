@@ -34,14 +34,6 @@ const Navbar = () => {
 const StyledNav = styled.nav`
   min-height: 3rem;
   background: ${(props) => props.theme.bgMain};
-
-  li:not(:last-child) {
-    padding-bottom: 0.5rem;
-  }
-  li:last-child {
-    padding-bottom: 1rem;
-  }
-
   @media (max-width: 768px) {
     min-height: 3.5rem;
     padding: 1rem 5%;
@@ -57,7 +49,7 @@ const StyledDiv = styled(Div)`
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;
-  transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition: all 0.6s ease-out;
   @media (max-width: 768px) {
     flex-direction: column;
     margin-top: ${(props) => (props.open === true ? "0px" : "-30rem")};
