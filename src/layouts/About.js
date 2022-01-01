@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
+import { device } from "../theme/device";
 
 import toolsJSON from "../data/tools.json";
 import experienceJSON from "../data/experience.json";
@@ -12,9 +13,9 @@ import WorkCard from "../components/WorkCard";
 import Project from "../components/Project";
 
 const About = () => {
-  const [tools, setTools] = useState(toolsJSON);
-  const [experience, setExperience] = useState(experienceJSON);
-  const [projects, setProjects] = useState(projectsJSON);
+  const [tools] = useState(toolsJSON);
+  const [experience] = useState(experienceJSON);
+  const [projects] = useState(projectsJSON);
 
   return (
     <>
@@ -79,7 +80,7 @@ const CardContainer = styled.div`
   justify-content: space-between;
   align-items: space-between;
 
-  @media (max-width: 768px) {
+  @media ${device.tabPort} {
     flex-direction: column;
   }
 
@@ -92,7 +93,8 @@ const CardContainer = styled.div`
     flex-direction: column;
     border-left: 4px solid;
     border-color: ${(props) => props.theme.accentMain};
-    @media (max-width: 768px) {
+
+    @media ${device.tabPort} {
       margin: 3rem 0%;
     }
   }
