@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { device } from "../theme/device";
-
 import { useForm } from "react-hook-form";
 import PropTypes from "prop-types";
 
@@ -94,8 +93,7 @@ const Form = () => {
 const FormContainer = styled(Container)`
   padding: 3rem 0;
   width: 100%;
-
-  @media ${device.tabLand} {
+  @media ${device.tabPort} {
     padding: 3rem 0 0 0;
   }
 
@@ -106,8 +104,7 @@ const FormContainer = styled(Container)`
     padding: 1rem;
     border-radius: 20px;
     width: auto;
-
-    @media ${device.tabLand} {
+    @media ${device.tabPort} {
       padding: 1.5rem 1rem;
     }
   }
@@ -122,8 +119,7 @@ const FormContainer = styled(Container)`
     div:nth-child(2) {
       grid-column: 1 / 3;
       grid-row: 1;
-
-      @media ${device.tabLand} {
+      @media ${device.tabPort} {
         grid-column: 1;
         grid-row: 1;
       }
@@ -131,8 +127,7 @@ const FormContainer = styled(Container)`
     div:nth-child(3) {
       grid-column: 3 / 5;
       grid-row: 1;
-
-      @media ${device.tabLand} {
+      @media ${device.tabPort} {
         grid-column: 1;
         grid-row: 2;
       }
@@ -140,7 +135,7 @@ const FormContainer = styled(Container)`
     div:nth-child(4) {
       grid-column: 1 / 4;
       grid-row: 2;
-      @media (max-width: 768px) {
+      @media ${device.tabPort} {
         grid-column: 1;
         grid-row: 3;
       }
@@ -148,13 +143,13 @@ const FormContainer = styled(Container)`
     div:last-child {
       grid-column: 4 / 5;
       grid-row: 2;
-      @media ${device.tabLand} {
+      @media ${device.tabPort} {
         grid-column: 1;
         grid-row: 4;
       }
     }
 
-    @media ${device.tabLand} {
+    @media ${device.tabPort} {
       grid-template-columns: repeat(1, auto);
       gap: 0.5rem 1rem;
       grid-auto-rows: minmax(auto, auto);
@@ -221,7 +216,7 @@ const StyledSubmit = styled.button`
   cursor: pointer;
   transition: all 0.3s ease-in;
 
-  @media ${device.tabLand} {
+  @media ${device.tabPort} {
     min-height: 48px;
     display: flex;
     justify-content: center;
