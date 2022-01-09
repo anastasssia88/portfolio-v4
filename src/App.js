@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import styled from "styled-components";
 
 import { ThemeProvider } from "styled-components";
-import { lightTheme, darkTheme } from "./theme/theme";
+import { lightTheme } from "./theme/theme";
 
 import Navbar from "./layouts/Navbar";
 import Hero from "./layouts/Hero";
