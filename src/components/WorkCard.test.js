@@ -41,6 +41,25 @@ describe("WorkCard component", () => {
     const paragraph = screen.getByText("Apple");
     expect(paragraph).toBeInTheDocument();
   });
+
+  test("renders not empty tags ul", () => {
+    render(
+      <WorkCard
+        state={state}
+        title={title}
+        dates={dates}
+        company={company}
+        description={description}
+        tags={tags}
+      />
+    );
+
+    const listElement = screen.getByRole("list");
+    expect(listElement).toBeInTheDocument();
+
+    const listItemsElements = screen.getAllByRole("listitem");
+    expect(listItemsElements).not.toHaveLength(0);
+  });
 });
 
 // OLD TEST
