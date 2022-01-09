@@ -117,6 +117,7 @@ export const List = styled.ul`
 export const ListContainer = styled.ul`
   display: flex;
   flex-direction: row;
+  /* align-items: center; */
 
   @media ${device.tabPort} {
     flex-direction: column;

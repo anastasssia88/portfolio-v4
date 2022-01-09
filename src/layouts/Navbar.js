@@ -35,12 +35,7 @@ const Navbar = () => {
 const StyledNav = styled.nav`
   min-height: 3rem;
   background: ${(props) => props.theme.bgMain};
-  li:not(:last-child) {
-    padding-bottom: 0.5rem;
-  }
-  li:last-child {
-    padding-bottom: 1rem;
-  }
+
   @media ${device.tabPort} {
     min-height: 3.5rem;
     padding: 1rem 5%;
@@ -48,6 +43,12 @@ const StyledNav = styled.nav`
     flex-direction: column;
     align-items: flex-end;
     justify-content: center;
+    li:not(:last-child) {
+      padding-bottom: 0.5rem;
+    }
+    li:last-child {
+      padding-bottom: 1rem;
+    }
   }
 `;
 
