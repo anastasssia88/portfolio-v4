@@ -51,7 +51,6 @@ const Form = () => {
       <form
         onSubmit={handleSubmit(onSubmit, onError)}
         method="POST"
-        action={() => setSent(true)}
         data-netlify="true"
         data-netlify-honeypot="bot-field"
         name="contact"
