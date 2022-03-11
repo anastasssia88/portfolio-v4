@@ -5,16 +5,17 @@
       "title": "Siri Voice Buidler / Frontend Engineer",
       "dates": "Aug 2021 - Present",
       "company": "Apple via Advantis",
-      "description": "Improving Russian voices of Siri. Helping increase TTS team's productivity by building user interfaces for voice building tools.",
+      "description": "Improving user experience for Russian speaping customers via Siri voices enhancements. Building internals web tools for Siri TTS team.",
       "tags": [
-        "Python",
+        
         "JavaScript",
+        "React.js",
         "Flask",
         "Postgres",
-        "React.js",
-        "Machine learning",
-        "Phonetics",
-        "IPA",
+        "SQL",
+        "Python",
+        "Command line",
+        "Bitbucket",
         "Git"
       ]
     },
@@ -24,7 +25,7 @@
       "title": "Frontend Engineer",
       "dates": "Nov 2018 - Aug 2021",
       "company": "Freelance",
-      "description": "Developed performant and accessible user interfaces with Reactjs and Nextjs. Reduced by 20% cost-per-lead by investigating and improving the performance of a website by eliminating render-blocking CSS and JavaScript. Increased  development productivity by 2 hours/day by refactoring & buidling reusable components.",
+      "description": "Developed performant and accessible websites and web apps for blogs, forums, and landing pages for small businesses using JavaScript (React.js, Next.js) and Python (Django). Worked alongside another developer to create reusable React components that saved over 30 hours of development work in the future. Improved existing React projects by refactoring, building custom React hooks to make the app's logic reusable which resulted in 2x faster new feature implementation. Optimized 10+ web apps & websites for maximum speed, accessibility, and SEO which helped to reduce by 20% the cost-per-lead within one of the projects.",
       "tags": [
         "JavaScript",
         "HTML/CSS",

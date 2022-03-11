@@ -7,11 +7,11 @@
     {
       "id": 2,
       "type": "Tools",
-      "content": "React.js, Next.js, Flask, Django, Postgres, Git & Github"
+      "content": "React.js, Next.js, Styled Components, Tailwind CSS, Flask, Django"
     },
     {
       "id": 3,
       "type": "Other",
-      "content": "Computer Science Fundamentals, Text-to-speech, Voice Building"
+      "content": "Postgres, MongoDB, Git version control, Gibhub & Bitbucket, Docker, Kubernetes, Command line"
     }
   ]
