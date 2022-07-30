@@ -6,18 +6,17 @@ import { Container } from "./Wrappers";
 import SocialBtns from "../components/SocialBtns";
 import Avatar from "../images/profile_pic.jpg";
 
+import hero from "../data/hero.json";
+
 const Hero = () => {
   return (
     <HeroSection>
       <Container>
         <TextBox>
-          <p>linguist / frontend engineer</p>
-          <h1>I'm Anastasia</h1>
-          <h3>Text-to-speech & Frontend engineering</h3>
-          <p>
-            I help build a voice assistant technology by applying my background
-            in linguistics and experience in web development.
-          </p>
+          <p>{hero.role}</p>
+          <h1>{hero.heading}</h1>
+          <h3>{hero.subheading}</h3>
+          <p>{hero.description}</p>
           <SocialBtns />
         </TextBox>
         <ImageBox>

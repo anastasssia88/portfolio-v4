@@ -2,16 +2,16 @@
     {
       "id": 1,
       "type": "Languages",
-      "content": "HTML5, CSS (SCSS/Sass), Javascript, Typescript, Python, SQL"
+      "content": "HTML, CSS, Javascript, Typescript, Python, SQL"
     },
     {
       "id": 2,
       "type": "Tools",
-      "content": "React.js, Next.js, Styled Components, Tailwind CSS, Flask, Django"
+      "content": "React.js, Next.js, Express.js, Flask, Django"
     },
     {
       "id": 3,
       "type": "Other",
-      "content": "Postgres, MongoDB, Git version control, Gibhub & Bitbucket, Docker, Kubernetes, Command line"
+      "content": "Postgres, Gibhub & Bitbucket, Docker, Kubernetes"
     }
   ]

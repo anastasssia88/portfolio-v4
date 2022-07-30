@@ -1,15 +1,33 @@
 [
-    {
-      "id": 11,
+  {
+    "id": 12,
       "state": "current",
-      "title": "Siri Voice Buidler / Frontend Engineer",
-      "dates": "Aug 2021 - Present",
-      "company": "Apple via Advantis",
-      "description": "Improving user experience for Russian speaping customers via Siri voices enhancements. Building internals web tools for Siri TTS team.",
+      "title": "Frontend Software Engineer",
+      "dates": "Jun 2022 - present",
+      "company": "Huckberry",
       "tags": [
-        
         "JavaScript",
         "React.js",
+        "Node.js",
+        "Postgres",
+        "Git"
+      ]
+  },
+
+    {
+      "id": 12,
+      "state": "past",
+      "title": "Full stack developer / Siri voice builder",
+      "dates": "Aug 2021 - Jun 2022",
+      "company": "Apple via Advantis",
+      "description": [
+        "Enhanced team's productivity and visibility over important data & processes by building and implementing new internal full-stack applications", "Developed application data model (Postgres), setup scalable data pipelines", "Collaborated with other engineers to develop internal microservices with Express.js & Flask, to setup authentication & authorization mechanisms, and deploy dockerized apps to Kubernetes", "Created reusable React components library & custom hooks to save the development time. Covered UI components with unit tests using Jest and Testing library", "Wrote comprehensive docs describing new internal tools architecture for easier maintenance, feature implementation, collaboration, and onboarding", "Improved the quality of Russian voices of Siri; built and pushed new voices to production"
+      ],
+      "tags": [
+        "JavaScript",
+        "Typescript",
+        "React.js",
+        "Express.js",
         "Flask",
         "Postgres",
         "SQL",
@@ -20,21 +38,19 @@
       ]
     },
     {
-      "id": 12,
+      "id": 11,
       "state": "past",
-      "title": "Frontend Engineer",
+      "title": "Web Developer",
       "dates": "Nov 2018 - Aug 2021",
       "company": "Freelance",
-      "description": "Developed performant and accessible websites and web apps for blogs, forums, and landing pages for small businesses using JavaScript (React.js, Next.js) and Python (Django). Worked alongside another developer to create reusable React components that saved over 30 hours of development work in the future. Improved existing React projects by refactoring, building custom React hooks to make the app's logic reusable which resulted in 2x faster new feature implementation. Optimized 10+ web apps & websites for maximum speed, accessibility, and SEO which helped to reduce by 20% the cost-per-lead within one of the projects.",
+      "description": ["Developed performant and accessible websites and web apps for small businesses with WordPress, Javascript (React, Next) and Python (Django)", "Improved existing React projects by refactoring, building custom React hooks to make the app's logic reusable which resulted in 2x faster new feature implementation"],
       "tags": [
+        "WordPress",
         "JavaScript",
-        "HTML/CSS",
         "React.js",
         "Next.js",
         "TailwindCSS",
-        "Bootstrap",
-        "Styled Components",
-        "Git"
+        "Bootstrap"
       ]
     }
   ]

@@ -7,16 +7,13 @@ import { List } from "../layouts/Wrappers";
 import Tag from "../components/Tag";
 
 const WorkCard = ({ state, title, dates, company, description, tags }) => {
-  description = description.split(". ");
-
   return (
     <StyledWorkCard state={state}>
       <h3>{title}</h3>
       <p>{dates}</p>
       <p>{company}</p>
-      {description.map((sentence) => (
-        <p key={sentence}>- {sentence}</p>
-      ))}
+      {description &&
+        description.map((sentence) => <p key={sentence}>- {sentence}</p>)}
       <List experience>
         {tags.map((i) => (
           <Tag key={i} content={i} />
@@ -60,10 +57,10 @@ const StyledWorkCard = styled.div`
   }
 
   p:nth-child(2) {
-    font-size: 12px;
+    font-size: 14px;
   }
   p:nth-child(3) {
-    font-size: 12px;
+    font-size: 14px;
   }
 
   p:nth-child(4) {
