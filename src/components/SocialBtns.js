@@ -7,13 +7,13 @@ import { Github } from "@styled-icons/bootstrap/Github";
 const SocialBtns = () => {
   return (
     <StyledDiv>
-      <a href="https://twitter.com/linguanastya" target="_blank" rel="noreferrer">
+      <a href="https://twitter.com/linguanastya" target="_blank" rel="noopener noreferrer">
         <Twitter />
       </a>
-      <a href="https://github.com/anastasssia88" target="_blank" rel="noreferrer">
+      <a href="https://github.com/anastasssia88" target="_blank" rel="noopener noreferrer">
         <GitHub />
       </a>
-      <a href="https://www.linkedin.com/in/anastasia-titova/" target="_blank" rel="noreferrer">
+      <a href="https://www.linkedin.com/in/anastasia-titova/" target="_blank" rel="noopener noreferrer">
         <LinkedIn />
       </a>
     </StyledDiv>

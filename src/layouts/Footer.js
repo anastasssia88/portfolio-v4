@@ -1,5 +1,4 @@
 import React from "react";
-import styled from "styled-components";
 
 import { Div, ListContainer } from "./Wrappers";
 import SocialBtn from "../components/SocialBtns";

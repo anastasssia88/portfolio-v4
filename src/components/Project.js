@@ -40,7 +40,7 @@ const Project = ({ name, title, type, description, tags, demoLink }) => {
         transition: { duration: 0.3 },
       }}
     >
-      <a href={demoLink} target="_blank" rel="noreferrer">
+      <a href={demoLink} target="_blank" rel="noopener noreferrer">
         <img src={image} alt={name} />
         <div>
           <p>{type}</p>
